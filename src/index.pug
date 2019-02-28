@@ -1,0 +1,30 @@
+include modules/standart_btn/button.pug
+include modules/arrows_btn/arrow.pug
+
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title FlatUi Components
+  body
+    .wrapper
+      div
+        h2.title-block Standart buttons
+        .st-buttons
+          div
+            +button('small', 'green')
+            +button('big', 'green')
+          div
+            +button('big', 'red')
+            +button('small', 'red')
+      div
+        h2.title-block Arrow buttons
+        .arrow-buttons
+          +arrow('prev')
+          +arrow('next')
+          +arrow('prev', 'disabled')
+          +arrow('next', 'disabled')
+          +arrow('prev')
+          +arrow('next')

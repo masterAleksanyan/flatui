@@ -1,0 +1,7 @@
+mixin arrow(nextOrprev, state)
+  if state
+    button(class="arrow-btn arrow-btn_"+nextOrprev disabled)
+      span.arrow-btn_icon
+  else
+    button(class="arrow-btn arrow-btn_"+nextOrprev)
+      span.arrow-btn_icon

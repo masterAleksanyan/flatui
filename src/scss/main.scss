@@ -1,0 +1,51 @@
+//@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900|Source+Sans+Pro:300,400');
+// All fonts
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+//font-family: 'Source Sans Pro', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+//font-family: 'Lato', sans-serif;
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 595px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.title-block{
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.st-buttons{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 55px;
+  & > div {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+}
+
+.arrow-buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 0 80px;
+}
+
+
+@import "../modules/standart_btn/button.scss";
+@import "../modules/arrows_btn/arrow.scss";
