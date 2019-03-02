@@ -7,6 +7,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 //font-family: 'Lato', sans-serif;
 
+//*, *::after, *::before{box-sizing: border-box;}
+
 body {
   margin: 0;
 }
@@ -46,6 +48,13 @@ body {
   padding: 0 80px;
 }
 
+.pie-chart{
+  display: flex;
+  justify-content: space-around;
+}
+
 
 @import "../modules/standart_btn/button.scss";
 @import "../modules/arrows_btn/arrow.scss";
+@import "../modules/pie_chart/pie_chart.scss";
+@import "../modules/pie_chart2/pie_chart2.scss";

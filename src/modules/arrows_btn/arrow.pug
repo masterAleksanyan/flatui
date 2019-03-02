@@ -1,5 +1,5 @@
-mixin arrow(nextOrprev, state)
-  if state
+mixin arrow(nextOrprev, disabled)
+  if disabled
     button(class="arrow-btn arrow-btn_"+nextOrprev disabled)
       span.arrow-btn_icon
   else

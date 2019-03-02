@@ -1,5 +1,7 @@
 include modules/standart_btn/button.pug
 include modules/arrows_btn/arrow.pug
+include modules/pie_chart/pie_chart.pug
+include modules/pie_chart2/pie_chart2.pug
 
 doctype html
 html
@@ -8,6 +10,9 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title FlatUi Components
+    script
+      include ../node_modules/jquery/dist/jquery.min.js
+    link(href="jquery.jchart.js" type="text/javascript")
   body
     .wrapper
       div
@@ -28,3 +33,21 @@ html
           +arrow('next', 'disabled')
           +arrow('prev')
           +arrow('next')
+      div
+        h2.title-block PERCENTAGES / PIE CHART
+        .pie-chart
+          script
+            include modules/pie_chart/pie_chart.js
+          +pie_chart('pie-block1')
+          script.
+            updateDonutChart('pie-block1', 0, true)
+          +pie_chart('pie-block2')
+          script.
+            updateDonutChart('pie-block2', 38, true)
+          +pie_chart('pie-block3')
+          script.
+            updateDonutChart('pie-block3', 62, true)
+          +pie_chart('pie-block4')
+          script.
+            updateDonutChart('pie-block4', 89, true)
+          +pie_chart2
