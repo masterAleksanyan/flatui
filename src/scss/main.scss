@@ -1,11 +1,11 @@
-//@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900|Source+Sans+Pro:300,400');
 // All fonts
+//@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900|Source+Sans+Pro:300,400');
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 //font-family: 'Source Sans Pro', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 //font-family: 'Lato', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 
 //*, *::after, *::before{box-sizing: border-box;}
 
@@ -50,7 +50,12 @@ body {
 
 .pie-chart{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.slider-block{
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -58,3 +63,5 @@ body {
 @import "../modules/arrows_btn/arrow.scss";
 @import "../modules/pie_chart/pie_chart.scss";
 @import "../modules/pie_chart2/pie_chart2.scss";
+@import "../modules/rangeSlider/range_slider.scss";
+@import "../modules/rangeSlider2/range_slider2.scss";

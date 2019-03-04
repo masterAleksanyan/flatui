@@ -2,6 +2,8 @@ include modules/standart_btn/button.pug
 include modules/arrows_btn/arrow.pug
 include modules/pie_chart/pie_chart.pug
 include modules/pie_chart2/pie_chart2.pug
+include modules/rangeSlider/range_slider.pug
+include modules/rangeSlider2/range_slider2.pug
 
 doctype html
 html
@@ -12,7 +14,7 @@ html
     title FlatUi Components
     script
       include ../node_modules/jquery/dist/jquery.min.js
-    link(href="jquery.jchart.js" type="text/javascript")
+    script(src="jquery.jchart.js" type="text/javascript")
   body
     .wrapper
       div
@@ -38,16 +40,14 @@ html
         .pie-chart
           script
             include modules/pie_chart/pie_chart.js
-          +pie_chart('pie-block1')
-          script.
-            updateDonutChart('pie-block1', 0, true)
-          +pie_chart('pie-block2')
-          script.
-            updateDonutChart('pie-block2', 38, true)
-          +pie_chart('pie-block3')
-          script.
-            updateDonutChart('pie-block3', 62, true)
-          +pie_chart('pie-block4')
-          script.
-            updateDonutChart('pie-block4', 89, true)
-          +pie_chart2
+          +pie_chart('pie-block1', 0, true)
+          +pie_chart('pie-block2', 38, true)
+          +pie_chart('pie-block3', 62, true)
+          +pie_chart('pie-block4', 89, true)
+          +pie_chart2('elem-jchart')
+      div
+        h2.title-block Sliders
+        .slider-block
+          +range_slider(36, 'red')
+          +range_slider2(75, 'green')
+          

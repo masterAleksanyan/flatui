@@ -14,8 +14,6 @@ button.st-btn{
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
     display: block;
-    width: 49px;
-    height: 49px;
     border-radius: 50%;
     background-color: #fafafa;
     opacity: .3;
@@ -26,6 +24,10 @@ button.st-btn{
     font-size: 12px;
     letter-spacing: 0.6px;
     border-radius: .3em;
+    span{
+      width: 49px;
+      height: 49px;
+    }
   }
   &_small{
     width: 78px;
@@ -33,6 +35,10 @@ button.st-btn{
     font-size: 10px;
     letter-spacing: 0.5px;
     border-radius: .2em;
+    span{
+      width: 33px;
+      height: 33px;
+    }
   }
   &_red{
     color: #e34a26;

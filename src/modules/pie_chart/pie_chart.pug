@@ -1,4 +1,4 @@
-mixin pie_chart(el)
+mixin pie_chart(el, p, b)
   div(id=""+el class="donut-size")
     .pie-wrapper
       span.label
@@ -7,3 +7,5 @@ mixin pie_chart(el)
         .left-side.half-circle
         .right-side.half-circle
       .shadow
+  script.
+    updateDonutChart('#{el}', #{p}, #{b})
