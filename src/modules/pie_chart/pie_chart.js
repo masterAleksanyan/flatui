@@ -1,4 +1,14 @@
-function updateDonutChart (el, percent, donut) {
+let charts = document.querySelectorAll('.pie_chart_item');
+let elem = null;
+
+for(let i=0; i<charts.length; i++){
+  let pre = charts[i].attributes['data-pracent'].value;
+  let b = charts[i].attributes['data-boolean'].value;
+  elem = charts[i];
+  updateDonutChart(pre, b);
+}
+
+function updateDonutChart (percent, donut) {
   percent = Math.round(percent);
   if (percent > 100) {
       percent = 100;
@@ -6,7 +16,6 @@ function updateDonutChart (el, percent, donut) {
       percent = 0;
   }
   var deg = Math.round(360 * (percent / 100));
-  var elem = document.getElementById(el);
   var elemPie = elem.querySelector('.pie');
   var elemRightSide = elem.querySelector('.right-side');
   var elemLeftSide = elem.querySelector('.left-side');

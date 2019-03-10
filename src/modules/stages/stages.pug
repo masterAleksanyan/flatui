@@ -1,0 +1,9 @@
+mixin stagesItem(numItem, level, redGreen)
+  div(class="stages stages__"+redGreen)
+    .stages__full
+      - for (var i = 1; i <= numItem; i++)
+      if i <= level && level != 1
+        span.stages__item.stages__item-active= i
+      else
+        span.stages__item= i
+    div(class="stages__level" style="width: "+(level-1)*(100/(numItem-1))+"%")

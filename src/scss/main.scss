@@ -11,6 +11,7 @@
 
 body {
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 .wrapper {
@@ -19,6 +20,9 @@ body {
   max-width: 595px;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 10px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 .title-block{
@@ -41,22 +45,71 @@ body {
     align-items: flex-end;
   }
 }
+@media only screen and (max-width: 640px){
+  .st-buttons{
+    flex-direction: column;
+    padding: 0 10px;
+    &>div{
+      flex-basis: auto;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
+}
 
 .arrow-buttons{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   padding: 0 80px;
+  & > div{
+    display: flex;
+    flex-basis: calc(33% - 24px);
+    min-width: 120px;
+    justify-content: space-between;
+    margin: 10px;
+  }
+}
+@media only screen and (max-width: 640px){
+  .arrow-buttons{
+    & > div{
+      flex-basis: auto;
+    }
+  }
 }
 
 .pie-chart{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  & > div{
+    margin: 10px;
+  }
+}
+@media only screen and (max-width: 640px){
+  .pie-chart{
+    justify-content: center;
+  }
 }
 
 .slider-block{
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 640px){
+  .slider-block{
+    flex-direction: column;
+    align-items: center;
+    & > div{
+      margin: 20px 0;
+    }
+  }
+}
+
+.stages-block{
+  
+}
+
 
 
 @import "../modules/standart_btn/button.scss";
@@ -65,3 +118,4 @@ body {
 @import "../modules/pie_chart2/pie_chart2.scss";
 @import "../modules/rangeSlider/range_slider.scss";
 @import "../modules/rangeSlider2/range_slider2.scss";
+@import "../modules/stages/stages.scss";
