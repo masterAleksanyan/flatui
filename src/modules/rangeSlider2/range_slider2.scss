@@ -10,6 +10,11 @@
     color: #d1d1d1;
     letter-spacing: 0.55px;
     font-size: 11px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   &__row{
     width: 100%;
@@ -25,6 +30,11 @@
     height: 5px;
     background-color: #959595;
     border-radius: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     &-red{
       background-color: #e75735;
       .range-slide2__btn{
