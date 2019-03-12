@@ -9,6 +9,15 @@
 
 //*, *::after, *::before{box-sizing: border-box;}
 
+@import "../modules/standart_btn/button.scss";
+@import "../modules/arrows_btn/arrow.scss";
+@import "../modules/pie_chart/pie_chart.scss";
+@import "../modules/pie_chart2/pie_chart2.scss";
+@import "../modules/rangeSlider/range_slider.scss";
+@import "../modules/rangeSlider2/range_slider2.scss";
+@import "../modules/stages/stages.scss";
+@import "../modules/formElements/form.scss";
+
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -34,6 +43,7 @@ body {
   margin: 50px 0;
 }
 
+//  Standart buttons
 .st-buttons{
   display: flex;
   justify-content: space-between;
@@ -57,16 +67,18 @@ body {
   }
 }
 
+
+//  Arrow buttons
 .arrow-buttons{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 0 80px;
+  padding: 0 60px;
   & > div{
     display: flex;
+    justify-content: space-between;
     flex-basis: calc(33% - 24px);
     min-width: 120px;
-    justify-content: space-between;
     margin: 10px;
   }
 }
@@ -78,6 +90,8 @@ body {
   }
 }
 
+
+// Pie chart
 .pie-chart{
   display: flex;
   justify-content: space-between;
@@ -92,6 +106,8 @@ body {
   }
 }
 
+
+// Sliders
 .slider-block{
   display: flex;
   justify-content: space-between;
@@ -106,16 +122,45 @@ body {
   }
 }
 
+
+// Stages block
 .stages-block{
   
 }
 
 
+// Form elements
+.form_elements{
+  display: flex;
+  justify-content: space-between;
+  &>div{
+    flex-basis: calc(50% - 10px);
+  }
+}
 
-@import "../modules/standart_btn/button.scss";
-@import "../modules/arrows_btn/arrow.scss";
-@import "../modules/pie_chart/pie_chart.scss";
-@import "../modules/pie_chart2/pie_chart2.scss";
-@import "../modules/rangeSlider/range_slider.scss";
-@import "../modules/rangeSlider2/range_slider2.scss";
-@import "../modules/stages/stages.scss";
+//  form button
+.form_btn{
+  display: block;
+  margin-left: auto;
+  background-color: #4eb7a8;
+  color: #fff;
+  &:hover{
+    color: #44ae9f;
+    background-color: #fff;
+  }
+  span{
+    background-color: #44ae9f;
+  }
+}
+
+// form-title
+.form-title{
+  margin: 0 0 33px;
+}
+
+
+
+
+
+
+

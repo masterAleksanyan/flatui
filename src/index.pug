@@ -5,6 +5,7 @@ include modules/pie_chart2/pie_chart2.pug
 include modules/rangeSlider/range_slider.pug
 include modules/rangeSlider2/range_slider2.pug
 include modules/stages/stages.pug
+include modules/formElements/form.pug
 
 doctype html
 html
@@ -21,11 +22,11 @@ html
         h2.title-block Standart buttons
         .st-buttons
           div
-            +button('small', 'green')
-            +button('big', 'green')
+            +button('small', 'green', 'button')
+            +button('big', 'green', 'button')
           div
-            +button('big', 'red')
-            +button('small', 'red')
+            +button('big', 'red', 'button')
+            +button('small', 'red', 'button')
       div
         h2.title-block Arrow buttons
         .arrow-buttons
@@ -55,3 +56,18 @@ html
         h2.title-block Stages
         .stages-block
           +stagesItem('5', '3', 'red')
+      div
+        h2.title-block FORM ELEMENTS
+        form.form_elements
+          div
+            +input('text', 'Name', 'Your Name')
+            +input('email', 'email', 'Your email')
+            +textarea('Your Message')
+            +button('big', 'green', 'submit', 'form_btn')
+          div
+            div
+              h3.title-block.form-title TOGGLES
+              +radio('r', 2)
+            div
+              h3.title-block.form-title TICK BOXES
+              +boxes(['box1', 'box2'])

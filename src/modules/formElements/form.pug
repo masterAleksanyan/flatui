@@ -1,0 +1,25 @@
+mixin input(type, name, placeholder)
+  p.inp
+    input(class="inp_item" type=""+type name=""+name placeholder=""+placeholder)
+    span.msg.msg__err Error
+    span.msg.msg__ok  Thanks!
+
+mixin textarea(placeholder)
+  p.inp
+    textarea(class="inp_item txt_area" placeholder=""+placeholder)
+
+mixin radio(name, numbers_radio)
+  div
+    - for (var i=0; i<numbers_radio; i++)
+      label
+        input(type="radio" name=""+name)
+        p.r_btns
+          span(class="r_btns__item r_btns__item-off") Off
+          span(class="r_btns__item r_btns__item-on") On
+
+mixin boxes(arr_name)
+  div
+    - for (var i = 0; i < arr_name.length; i++)
+      label
+        input(type="checkbox" name=""+arr_name[i])
+        span.icon-check
