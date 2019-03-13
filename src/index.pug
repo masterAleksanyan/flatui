@@ -63,11 +63,34 @@ html
             +input('text', 'Name', 'Your Name')
             +input('email', 'email', 'Your email')
             +textarea('Your Message')
-            +button('big', 'green', 'submit', 'form_btn')
-          div
+          div.form-buttons
             div
               h3.title-block.form-title TOGGLES
-              +radio('r', 2)
+              .toggles
+                +radioOffON('r', 'checked')
+                +radioOffON('r')
             div
               h3.title-block.form-title TICK BOXES
-              +boxes(['box1', 'box2'])
+              .boxes
+                +boxes('box1', 'checked')
+                +boxes('box2')
+          p
+            +button('big', 'green', 'submit', 'form_btn')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

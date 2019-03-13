@@ -52,6 +52,7 @@
   margin: 0 0 12px;
   display: flex;
   align-items: center;
+  overflow-x: hidden;
   &_item{
     flex-grow: 1;
     background-color: #e5e5e5;
@@ -121,25 +122,139 @@
   width: 100%;
   min-height: 88px;
   padding-top: 12px;
-  box-sizing: border-box;
 }
 
 
 //  radio buttons
-.r_btns{
-  
-  &__item{
-    
-    &-off{
-      
+.offon{
+  display: inline-block;
+  font-size: 16px;
+  &__input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:checked + .offon-btn{
+      .offon-btn__item-on{
+        display: block;
+        background-color: #4eb7a8;
+      }
+      .offon-btn__item-off{
+        display: none;
+      }
     }
-    &-on{
-      
+    &:focus + .offon-btn{
+      box-shadow: 0 0 1px 1px rgba(0,100,255,0.8);
+    }
+    &:disabled + .offon-btn{
+      opacity: .5;
+    }
+  }
+  &-btn{
+    width: 3.75em;
+    height: 1.5em;
+    border-radius: 2em;
+    line-height: 1.5em;
+    &__item{
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: .75em;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 2em;
+      &::after{
+        content: '';
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: 3px;
+      }
+      &-off{
+        text-align: left;
+        background-color: #e5e5e5;
+        padding-left: .75em;
+        &::after{
+          right: 3px;
+        }
+      }
+      &-on{
+        text-align: right;
+        display: none;
+        padding-right: 1em;
+        &::after{
+          left: 3px;
+        }
+      }
     }
   }
 }
 
+
 //  checkbox
-.icon-check{
-  
+.check{
+  font-size: 16px;
+  display: inline-block;
+  line-height: 0.8;
+  &__input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:checked + .check__box{
+      background-color: #4eb7a8;
+      &::after{
+        border-right-color: #fff;
+        border-bottom-color: #fff;
+      }
+    }
+    &:focus + .check__box{
+      box-shadow: 0 0 1px 1px rgba(0,100,255,0.8);
+    }
+    &:disabled + .check__box{
+      opacity: .5;
+    }
+  }
+  &__box{
+    position: relative;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    &::after{
+      content: '';
+      position: relative;
+      top: .15em;
+      left: 0;
+      display: inline-block;
+      width: .5em;
+      height: .8em;
+      border: .1em solid #c0c0c0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

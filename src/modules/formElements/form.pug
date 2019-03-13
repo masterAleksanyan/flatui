@@ -8,18 +8,51 @@ mixin textarea(placeholder)
   p.inp
     textarea(class="inp_item txt_area" placeholder=""+placeholder)
 
-mixin radio(name, numbers_radio)
-  div
-    - for (var i=0; i<numbers_radio; i++)
-      label
-        input(type="radio" name=""+name)
-        p.r_btns
-          span(class="r_btns__item r_btns__item-off") Off
-          span(class="r_btns__item r_btns__item-on") On
+mixin radioOffON(name, checked, text)
+    label.offon
+      if (checked === 'checked')
+        if (text)
+          input(class="offon__input" checked type="radio" name=""+name)
+          p.offon-btn
+            span(class="offon-btn__item offon-btn__item-off") Off
+            span(class="offon-btn__item offon-btn__item-on") On
+          | #{text}
+        else
+          input(class="offon__input" checked type="radio" name=""+name)
+          p.offon-btn
+            span(class="offon-btn__item offon-btn__item-off") Off
+            span(class="offon-btn__item offon-btn__item-on") On
+      else
+        if (text)
+          input(class="offon__input" type="radio" name=""+name)
+          p.offon-btn
+            span(class="offon-btn__item offon-btn__item-off") Off
+            span(class="offon-btn__item offon-btn__item-on") On
+          | #{text}
+        else
+          input(class="offon__input" type="radio" name=""+name)
+          p.offon-btn
+            span(class="offon-btn__item offon-btn__item-off") Off
+            span(class="offon-btn__item offon-btn__item-on") On
 
-mixin boxes(arr_name)
-  div
-    - for (var i = 0; i < arr_name.length; i++)
-      label
-        input(type="checkbox" name=""+arr_name[i])
-        span.icon-check
+mixin boxes(name, checked, text)
+  if (checked === 'checked')
+    if (text)
+      label.check
+        input(class="check__input" type="checkbox" name=""+name checked)
+        span.check__box
+        | #{text}
+    else
+      label.check
+        input(class="check__input" type="checkbox" name=""+name checked)
+        span.check__box
+  else
+    if (text)
+      label.check
+        input(class="check__input" type="checkbox" name=""+name)
+        span.check__box
+        | #{text}
+    else
+      label.check
+        input(class="check__input" type="checkbox" name=""+name)
+        span.check__box

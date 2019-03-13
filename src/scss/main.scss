@@ -23,6 +23,12 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -31,7 +37,7 @@ body {
   margin: 0 auto;
   padding: 10px;
   padding-bottom: 50px;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 
 .title-block{
@@ -133,8 +139,9 @@ body {
 .form_elements{
   display: flex;
   justify-content: space-between;
-  &>div{
-    flex-basis: calc(50% - 10px);
+  flex-wrap: wrap;
+  &>*{
+    width: 288px;
   }
 }
 
@@ -152,15 +159,39 @@ body {
     background-color: #44ae9f;
   }
 }
+@media only screen and (max-width: 640px){
+  .form_elements{
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_btn{
+    margin: 20px auto;
+  }
+}
 
 // form-title
 .form-title{
-  margin: 0 0 33px;
+  margin: 0 0 30px;
+  line-height: 1;
 }
 
+// radio and boxes block 
+.boxes,
+.toggles{
+  text-align: center;
+  line-height: .9;
+}
 
+.boxes .check + .check{
+  margin-left: .9em;
+}
 
-
+.toggles{
+  margin-bottom: 40px;
+  .offon + .offon{
+    margin-left: .9em;
+  }
+}
 
 
 
