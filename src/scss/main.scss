@@ -7,6 +7,9 @@
 //font-family: 'Lato', sans-serif;
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 
+//font-family: 'listcategory' !important;
+@import url('https://i.icomoon.io/public/temp/a4298033ad/UntitledProject/style.css');
+
 //*, *::after, *::before{box-sizing: border-box;}
 
 @import "../modules/standart_btn/button.scss";
@@ -117,6 +120,9 @@ body {
 .slider-block{
   display: flex;
   justify-content: space-between;
+  & > div{
+    width: 260px;
+  }
 }
 @media only screen and (max-width: 640px){
   .slider-block{
@@ -173,6 +179,13 @@ body {
 .form-title{
   margin: 0 0 30px;
   line-height: 1;
+}
+
+//  textarea
+.txt_area{
+  width: 100%;
+  min-height: 88px;
+  padding-top: 12px;
 }
 
 // radio and boxes block 

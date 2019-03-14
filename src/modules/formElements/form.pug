@@ -1,58 +1,34 @@
-mixin input(type, name, placeholder)
+mixin input(options)
   p.inp
-    input(class="inp_item" type=""+type name=""+name placeholder=""+placeholder)
+    input(class="inp_item "+(options.thisClass ? options.thisClass : "") 
+      type=(options.type?options.type:"text") 
+      name=(options.name?options.name:"")
+      placeholder=(options.placeholder?options.placeholder:""))
     span.msg.msg__err Error
     span.msg.msg__ok  Thanks!
 
-mixin textarea(placeholder)
+mixin textarea(options)
   p.inp
-    textarea(class="inp_item txt_area" placeholder=""+placeholder)
+    textarea(class="inp_item "+(options.thisClass ? options.thisClass : "")
+      name=(options.name ? options.name : false)
+      placeholder=(options.placeholder ? options.placeholder : ""))
 
-mixin radioOffON(name, checked, text)
+mixin radioOffON(options)
     label.offon
-      if (checked === 'checked')
-        if (text)
-          input(class="offon__input" checked type="radio" name=""+name)
-          p.offon-btn
-            span(class="offon-btn__item offon-btn__item-off") Off
-            span(class="offon-btn__item offon-btn__item-on") On
-          | #{text}
-        else
-          input(class="offon__input" checked type="radio" name=""+name)
-          p.offon-btn
-            span(class="offon-btn__item offon-btn__item-off") Off
-            span(class="offon-btn__item offon-btn__item-on") On
-      else
-        if (text)
-          input(class="offon__input" type="radio" name=""+name)
-          p.offon-btn
-            span(class="offon-btn__item offon-btn__item-off") Off
-            span(class="offon-btn__item offon-btn__item-on") On
-          | #{text}
-        else
-          input(class="offon__input" type="radio" name=""+name)
-          p.offon-btn
-            span(class="offon-btn__item offon-btn__item-off") Off
-            span(class="offon-btn__item offon-btn__item-on") On
+      input(class="offon__input" type="radio"
+        name=(options.name ? options.name : false)
+        checked=(options.checked ? "checked" : false)
+        disabled=(options.disabled ? "disabled" : false))
+      p.offon-btn
+        span(class="offon-btn__item offon-btn__item-off") Off
+        span(class="offon-btn__item offon-btn__item-on") On
+      | #{text}
 
-mixin boxes(name, checked, text)
-  if (checked === 'checked')
-    if (text)
-      label.check
-        input(class="check__input" type="checkbox" name=""+name checked)
-        span.check__box
-        | #{text}
-    else
-      label.check
-        input(class="check__input" type="checkbox" name=""+name checked)
-        span.check__box
-  else
-    if (text)
-      label.check
-        input(class="check__input" type="checkbox" name=""+name)
-        span.check__box
-        | #{text}
-    else
-      label.check
-        input(class="check__input" type="checkbox" name=""+name)
-        span.check__box
+mixin boxes(options)
+  label.check
+    input(class="check__input" type="checkbox" 
+      name=(options.name ? options.name : false) 
+      checked=(options.checked ? "checked" : false) 
+      disabled=(options.disabled ? "disabled" : false))
+    span.check__box
+    | #{options.text}

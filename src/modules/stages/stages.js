@@ -2,7 +2,7 @@ let stages = document.querySelectorAll('.stages');
 if(stages){
   for(let i = 0; i<stages.length; i++){
     stages[i].addEventListener('click', function(ev){
-      if(ev.target.className.includes('stages__item')){
+      if(ev.target.className.match('stages__item')){
         let num = ev.target.innerHTML;
         let stagesItems = this.querySelectorAll('.stages__item');
         let level = this.querySelector('.stages__level');

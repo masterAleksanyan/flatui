@@ -14,6 +14,7 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title FlatUi Components
+    link(rel="stylesheet" href="assets/fonts/font.css")
     script
       include ../node_modules/jquery/dist/jquery.min.js
   body
@@ -55,25 +56,25 @@ html
       div
         h2.title-block Stages
         .stages-block
-          +stagesItem('5', '3', 'red')
+          +stagesItem({items: '5', level: '2', color: 'red'})
       div
         h2.title-block FORM ELEMENTS
         form.form_elements
           div
-            +input('text', 'Name', 'Your Name')
-            +input('email', 'email', 'Your email')
-            +textarea('Your Message')
+            +input({type: 'text', name: 'Name', placeholder: 'Your Name'})
+            +input({type: 'email', name: 'email', placeholder: 'Your email'})
+            +textarea({placeholder: 'Your Message', thisClass: 'txt_area'})
           div.form-buttons
             div
               h3.title-block.form-title TOGGLES
               .toggles
-                +radioOffON('r', 'checked')
-                +radioOffON('r')
+                +radioOffON({name: 'r',checked: 'checked'})
+                +radioOffON({name: 'r'})
             div
               h3.title-block.form-title TICK BOXES
               .boxes
-                +boxes('box1', 'checked')
-                +boxes('box2')
+                +boxes({name: 'box1', checked: 'checked'})
+                +boxes({name: 'box2'})
           p
             +button('big', 'green', 'submit', 'form_btn')
 

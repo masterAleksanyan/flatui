@@ -6,7 +6,7 @@ if(slide2__btn){
     let th = slide2__btn[i];
     let thisWidth = th.clientWidth;
     let levelElem = th.parentNode;
-    let parent = th.closest('.range-slide2');
+    let parent = th.parentNode.parentNode;
     let slideWidth = parent.clientWidth;
     let slideOffLeft = parent.offsetLeft;
     let slideItemWidth = slideWidth/4;
@@ -54,7 +54,7 @@ if(slide2__btn){
           levelElem.style.width = 100 + '%';
         }
         if(x > slideItemWidth * 2 + slideItemWidth/2 && x < slideItemWidth * 3 + slideItemWidth/2){
-          levelElem.style.width = 75 + '%';
+          levelElem.style.width = 75 + '%'
         }
         if(x > slideItemWidth + slideItemWidth/2 && x < slideItemWidth * 2 + slideItemWidth/2){
           levelElem.style.width = 50 + '%';
