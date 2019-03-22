@@ -1,0 +1,20 @@
+mixin search(options)
+  p.searching
+    input(class="searching__input "+ (options.class ? "searching__"+options.class : "")
+          type="search" 
+          placeholder=""+options.placeholder)
+    button(class="searching__btn" type="button")
+      i.icon-search
+
+
+mixin dropDown(id, array)
+  .drop
+    input(class="drop__inp" id=""+id type="checkbox" placeholder="Choose An Option")
+    label(class="drop__label" for=""+id)
+      span.drop__btn
+    .drop__list
+      - for (var i=0; i<array.length; i++)
+        input(class="drop__list-inp input-hidden" id=""+id+i 
+              type="radio" name="r_"+id
+              checked=(i == 0 ? 'checked' : false))
+        label(class="drop__list-item" for=""+id+i )= array[i]

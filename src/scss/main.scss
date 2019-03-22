@@ -7,30 +7,30 @@
 //font-family: 'Lato', sans-serif;
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 
-//font-family: 'listcategory' !important;
-@import url('https://i.icomoon.io/public/temp/a4298033ad/UntitledProject/style.css');
 
 //*, *::after, *::before{box-sizing: border-box;}
 
-@import "../modules/standart_btn/button.scss";
-@import "../modules/arrows_btn/arrow.scss";
-@import "../modules/pie_chart/pie_chart.scss";
-@import "../modules/pie_chart2/pie_chart2.scss";
-@import "../modules/rangeSlider/range_slider.scss";
-@import "../modules/rangeSlider2/range_slider2.scss";
-@import "../modules/stages/stages.scss";
-@import "../modules/formElements/form.scss";
+@import "../vendor/font.css";
 
-body {
-  margin: 0;
-  font-family: 'Lato', sans-serif;
+@import "_mixins.scss";
+
+:focus{
+  @include placeholder {
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+  }
 }
-
 *, *::after, *::before{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+ul{list-style: none;}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 
 .wrapper {
   display: flex;
@@ -41,16 +41,45 @@ body {
   padding: 10px;
   padding-bottom: 50px;
   box-sizing: content-box;
+  & > div{
+    margin-bottom: 60px;
+  }
 }
 
-.title-block{
+.title2,
+.title3{
   font-size: 18px;
   font-family: 'Lato', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
-  margin: 50px 0;
+  line-height: 1;
 }
+.title2{
+  margin-bottom: 40px;
+}
+.title3 {
+	margin-bottom: 30px;
+}
+
+.flex-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@import "../modules/standart_btn/button.scss";
+@import "../modules/arrows_btn/arrow.scss";
+@import "../modules/pie_chart/pie_chart.scss";
+@import "../modules/pie_chart2/pie_chart2.scss";
+@import "../modules/rangeSlider/range_slider.scss";
+@import "../modules/rangeSlider2/range_slider2.scss";
+@import "../modules/stages/stages.scss";
+@import "../modules/formElements/form.scss";
+@import "../modules/search_drop/search.scss";
+
+
+
 
 //  Standart buttons
 .st-buttons{
@@ -175,12 +204,6 @@ body {
   }
 }
 
-// form-title
-.form-title{
-  margin: 0 0 30px;
-  line-height: 1;
-}
-
 //  textarea
 .txt_area{
   width: 100%;
@@ -208,3 +231,11 @@ body {
 
 
 
+
+//  search / drop down
+.search-drop{
+  width: 288px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #888;
+  font-size: 14px;
+}

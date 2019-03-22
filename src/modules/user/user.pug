@@ -1,0 +1,14 @@
+mixin user(options)
+  .user
+    .user__img
+      img(src="assets/img/"+options.photoname)
+    .user__about
+      h2.user__name= options.name
+      h3.user__vocation= options.vocation
+      p.user__soc
+        a(href="#")
+          i.icon-fb
+        a(href="#")
+          i.icon-tw
+        a(href="#")
+          i.icon-dribbble

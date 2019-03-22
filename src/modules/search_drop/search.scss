@@ -1,0 +1,126 @@
+.searching{
+  display: flex;
+  height: 2em;
+  margin-bottom: 1.1em;
+  &__input{
+    flex-grow: 1;
+    padding-left: .95em;
+    background-color: #e5e5e5;
+    color: #888;
+    border: none;
+    border-top-left-radius: .3em;
+    border-bottom-left-radius: .3em;
+    @include placeholder{
+      color: #888;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 14px;
+    }
+  }
+  &__btn{
+    border: none;
+    width: 33px;
+    border-bottom-right-radius: .3em;
+    border-top-right-radius: .3em;
+    background-color: #e75735;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+  }
+  &__not{
+    background-color: #e75735;
+    @include placeholder{
+      color: #fff;
+    }
+  }
+}
+
+.input-hidden{
+  @include inputHide;
+}
+
+//  drop
+.drop{
+  position: relative;
+  width: 100%;
+  height: 2em;
+  margin-bottom: 1.1em;
+  &__label{
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: .3em;
+    z-index: 99;
+  }
+  &__btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33px;
+    height: 100%;
+    padding-top: .4em;
+    background-color: #4eb7a8;
+    border-bottom-right-radius: .3em;
+    border-top-right-radius: .3em;
+    &::after{
+      content: '';
+      display: block;
+      width: .7em;
+      height: .7em;
+      margin: 0 auto;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+    }
+  }
+  &__list{
+    background-color: #4eb7a8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: .3em;
+    height: 2em;
+    overflow: hidden;
+    font-size: 1em;
+    color: #fff;
+    :checked + label{
+      order: -1;
+      border-top: 0;
+      background-color: #e5e5e5;
+      color: #888;
+      line-height: 2em;
+    }
+    &-item{
+      line-height: 2.5em;
+      padding-left: .95em;
+      order: 0;
+    }
+  }
+  &__inp{
+    @include inputHide;
+    &:checked ~ .drop__list{
+      height: auto;
+      z-index: 999;
+    }
+    &:checked + label{
+      z-index: 9999;
+      .drop__btn{
+        padding-top: .8em;
+        border-bottom-right-radius: 0;
+        &::after{
+          transform: rotate(225deg);
+        }
+      }
+    }
+    &:focus + .drop__label{
+      .drop__btn{
+        box-shadow: 0 0 1px 1px rgba(0,100,255,0.8);
+      }
+    }
+    &:disabled + .drop__label{
+      opacity: .5;
+    }
+  }
+}

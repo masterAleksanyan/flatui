@@ -1,3 +1,4 @@
+//import "../../node_modules/jquery/dist/jquery.min.js"
 import "../vendor/jquery.jchart.js"
 import "../modules/pie_chart/pie_chart.js"
 import "../modules/pie_chart2/pie_chart2.js"

@@ -1,6 +1,8 @@
-//import Jquery from 'jquery'
-import './js/common'
-import './scss/main.scss'
+import "jquery"
+import "popper.js"
+import './scss/main.scss';
+import './js/common';
+
 
 // import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/css/bootstrap.min.css'

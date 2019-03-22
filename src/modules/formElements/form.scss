@@ -1,52 +1,5 @@
 // inputs
 
-//  placeholder styles
-.inp_item::-webkit-input-placeholder{
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #888;
-  opacity: 1; 
-  transition: opacity 0.3s ease;
-  font-size: 14px;
-}
-.inp_item::-moz-placeholder{
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #888;
-  opacity: 1; 
-  transition: opacity 0.3s ease;
-  font-size: 14px;
-}
-.inp_item:-moz-placeholder{
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #888;
-  opacity: 1; 
-  transition: opacity 0.3s ease;
-  font-size: 14px;
-}
-.inp_item:-ms-input-placeholder{
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #888;
-  opacity: 1; 
-  transition: opacity 0.3s ease;
-  font-size: 14px;
-}
-.inp_item:focus::-webkit-input-placeholder{
-  opacity: 0; 
-  transition: opacity 0.3s ease;
-}
-.inp_item:focus::-moz-placeholder{
-  opacity: 0; 
-  transition: opacity 0.3s ease;
-}
-.inp_item:focus:-moz-placeholder{
-  opacity: 0; 
-  transition: opacity 0.3s ease;
-}
-.inp_item:focus:-ms-input-placeholder{
-  opacity: 0; 
-  transition: opacity 0.3s ease;
-}
-//  placeholder styles end
-
 .inp{
   width: 100%;
   margin: 0 0 12px;
@@ -64,6 +17,12 @@
     border-radius: .3em;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.14px;
+    @include placeholder {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: #888;
+      transition: opacity 0.3s ease;
+      font-size: 14px;
+    }
   }
 }
 

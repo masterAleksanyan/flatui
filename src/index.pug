@@ -6,6 +6,8 @@ include modules/rangeSlider/range_slider.pug
 include modules/rangeSlider2/range_slider2.pug
 include modules/stages/stages.pug
 include modules/formElements/form.pug
+include modules/search_drop/search.pug
+include modules/user/user.pug
 
 doctype html
 html
@@ -14,13 +16,10 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title FlatUi Components
-    link(rel="stylesheet" href="assets/fonts/font.css")
-    script
-      include ../node_modules/jquery/dist/jquery.min.js
   body
     .wrapper
       div
-        h2.title-block Standart buttons
+        h2.title2 Standart buttons
         .st-buttons
           div
             +button('small', 'green', 'button')
@@ -29,7 +28,7 @@ html
             +button('big', 'red', 'button')
             +button('small', 'red', 'button')
       div
-        h2.title-block Arrow buttons
+        h2.title2 Arrow buttons
         .arrow-buttons
           div
             +arrow('prev')
@@ -41,7 +40,7 @@ html
             +arrow('prev')
             +arrow('next')
       div
-        h2.title-block PERCENTAGES / PIE CHART
+        h2.title2 PERCENTAGES / PIE CHART
         .pie-chart
           +pie_chart(0, true)
           +pie_chart(38, true)
@@ -49,16 +48,16 @@ html
           +pie_chart(89, true)
           +pie_chart2('elem-jchart')
       div
-        h2.title-block Sliders
+        h2.title2 Sliders
         .slider-block
           +range_slider(36, 'red')
           +range_slider2(75, 'green')
       div
-        h2.title-block Stages
+        h2.title2 Stages
         .stages-block
           +stagesItem({items: '5', level: '2', color: 'red'})
       div
-        h2.title-block FORM ELEMENTS
+        h2.title2 FORM ELEMENTS
         form.form_elements
           div
             +input({type: 'text', name: 'Name', placeholder: 'Your Name'})
@@ -66,17 +65,28 @@ html
             +textarea({placeholder: 'Your Message', thisClass: 'txt_area'})
           div.form-buttons
             div
-              h3.title-block.form-title TOGGLES
+              h3.title2.title3 TOGGLES
               .toggles
                 +radioOffON({name: 'r',checked: 'checked'})
                 +radioOffON({name: 'r'})
             div
-              h3.title-block.form-title TICK BOXES
+              h3.title2.title3 TICK BOXES
               .boxes
                 +boxes({name: 'box1', checked: 'checked'})
                 +boxes({name: 'box2'})
           p
             +button('big', 'green', 'submit', 'form_btn')
+      .flex-between
+        div
+          h2.title3 SEARCH / DROP DOWN
+          form.search-drop
+            +search({placeholder: 'Search'})
+            +search({placeholder: 'I’ve not found what I’m looking for...', class: 'not'})
+            +dropDown('drop1', ['Choose An Option', 'Choose An', 'Choose', 'Lorem ipsum'])
+        .user-profile
+          h2.title3 USER  PROFILE
+          .users
+            +user({name: 'John Smith', vocation: 'UX  DESIGNER', photoname: 'user1.png'})
 
 
 
