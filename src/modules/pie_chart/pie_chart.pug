@@ -1,9 +1,9 @@
 mixin pie_chart(p, b)
-  div(class="pie_chart_item donut-size" data-pracent=""+p data-boolean=""+b)
-    .pie-wrapper
-      span.label
-        span.num 0
-      .pie
+  div(class="pie-chart" data-pracent=""+p data-boolean=""+b)
+    .pie-chart__wrapper
+      span.pie-chart__label
+        span.pie-chart__num 0
+      .pie-chart__pie
         .left-side.half-circle
         .right-side.half-circle
-      .shadow
+      .pie-chart__shadow

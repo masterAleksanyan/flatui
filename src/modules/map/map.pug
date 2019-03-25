@@ -1,0 +1,12 @@
+mixin map(options)
+  #map.map-block
+    .map-footer
+      .map-addres
+        span.map-addres__inscription= options.inscriptionText
+        a(class="map-addres__link" 
+          href=""+(options.addresLink?options.addresLink:"#"))= options.addresText
+      .map-geo
+        a(class="map-geo__item map-geo__item--location" href=""+(options.locationLink?options.locationLink:"#"))
+          i.icon-location
+        a(class="map-geo__item map-geo__item--geo" href=""+(options.geoLink?options.geoLink:"#"))
+          i.icon-geo

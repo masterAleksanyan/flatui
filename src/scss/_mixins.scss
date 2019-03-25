@@ -22,7 +22,7 @@
 
 // transition
 @mixin transition {
-  transition: all .4s ease-in;
+  transition: all .3s ease-in-out;
 }
 
 // input-hidden
@@ -34,54 +34,68 @@
   clip: rect(0 0 0 0);
 }
 
+//  outline
+@mixin outline{
+  box-shadow: 0 0 1px 1px rgba(0, 100, 238, .5) !important;
+}
+
 
 // Small tablets and large smartphones (landscape view)
-$screen-sm-min: 576px;
+$sm-max: 479px;
 
 // Small tablets (portrait view)
-$screen-md-min: 768px;
+$md-max: 767px;
 
 // Tablets and small desktops
-$screen-lg-min: 992px;
+$lg-max: 959px;
 
 // Large tablets and desktops
-$screen-xl-min: 1200px;
+$xl-max: 1199px;
 
-// myScreen
-$myscreen: 640px;
+// Large tablets and desktops
+$xl-min: 1200px;
+
+$my: 640px;
 
 
 // Small devices
-@mixin sm {
-   @media (max-width: #{$screen-sm-min}) {
+@mixin dev1 {
+   @media screen and (max-width: $sm-max) {
        @content;
    }
 }
 
 // Medium devices
-@mixin md {
-   @media (max-width: #{$screen-md-min}) {
+@mixin dev2 {
+   @media screen and (max-width: $md-max) {
        @content;
    }
 }
 
 // Large devices
-@mixin lg {
-   @media (max-width: #{$screen-lg-min}) {
+@mixin dev3 {
+   @media screen and (max-width: #{$lg-max}) {
        @content;
    }
 }
 
 // Extra large devices
-@mixin xl {
-   @media (max-width: #{$screen-xl-min}) {
+@mixin dev4 {
+   @media screen and (max-width: $xl-max) {
+       @content;
+   }
+}
+
+// Extra large devices
+@mixin dev4Min {
+   @media screen and (min-width: $xl-min) {
        @content;
    }
 }
 
 // my devices size
 @mixin mySize {
-   @media (max-width: #{$myscreen}) {
+   @media screen and (max-width: $my) {
        @content;
    }
 }

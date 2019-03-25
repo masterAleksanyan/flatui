@@ -20,11 +20,20 @@
     transition: opacity 0.3s ease;
   }
 }
+
+input, textarea, button, a{
+  outline: none;
+}
+.focuselem{
+  @include outline;
+}
+
 *, *::after, *::before{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+a{color: inherit; text-decoration: none;}
 ul{list-style: none;}
 
 body {
@@ -54,6 +63,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
+  color: #4f4f4f;
 }
 .title2{
   margin-bottom: 40px;
@@ -68,6 +78,8 @@ body {
 }
 
 
+
+
 @import "../modules/standart_btn/button.scss";
 @import "../modules/arrows_btn/arrow.scss";
 @import "../modules/pie_chart/pie_chart.scss";
@@ -77,6 +89,14 @@ body {
 @import "../modules/stages/stages.scss";
 @import "../modules/formElements/form.scss";
 @import "../modules/search_drop/search.scss";
+@import "../modules/user/user.scss";
+@import "../modules/newsEvents/news.scss";
+@import "../modules/map/map.scss";
+@import "../modules/calendar/calendar.scss";
+@import "../modules/messaging/messaging.scss";
+@import "../modules/video/video.scss";
+
+
 
 
 
@@ -92,19 +112,16 @@ body {
     justify-content: space-around;
     align-items: flex-end;
   }
-}
-@media only screen and (max-width: 640px){
-  .st-buttons{
+  @include mySize{
     flex-direction: column;
     padding: 0 10px;
-    &>div{
+    & > div{
       flex-basis: auto;
       align-items: center;
       margin-bottom: 20px;
     }
   }
 }
-
 
 //  Arrow buttons
 .arrow-buttons{
@@ -118,11 +135,7 @@ body {
     flex-basis: calc(33% - 24px);
     min-width: 120px;
     margin: 10px;
-  }
-}
-@media only screen and (max-width: 640px){
-  .arrow-buttons{
-    & > div{
+    @include mySize{
       flex-basis: auto;
     }
   }
@@ -130,17 +143,16 @@ body {
 
 
 // Pie chart
-.pie-chart{
+.pie-chart-container{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  font-size: 95px;
+  @include mySize{
+    justify-content: center;
+  }
   & > div{
     margin: 10px;
-  }
-}
-@media only screen and (max-width: 640px){
-  .pie-chart{
-    justify-content: center;
   }
 }
 
@@ -152,9 +164,7 @@ body {
   & > div{
     width: 260px;
   }
-}
-@media only screen and (max-width: 640px){
-  .slider-block{
+  @include mySize{
     flex-direction: column;
     align-items: center;
     & > div{
@@ -186,6 +196,9 @@ body {
   margin-left: auto;
   background-color: #4eb7a8;
   color: #fff;
+  @include mySize{
+    margin: 20px auto;
+  }
   &:hover{
     color: #44ae9f;
     background-color: #fff;
@@ -194,13 +207,10 @@ body {
     background-color: #44ae9f;
   }
 }
-@media only screen and (max-width: 640px){
+@include mySize{
   .form_elements{
     flex-direction: column;
     align-items: center;
-  }
-  .form_btn{
-    margin: 20px auto;
   }
 }
 
@@ -230,12 +240,79 @@ body {
 }
 
 
-
-
 //  search / drop down
+
+.searchdrop_userprofile{
+  display: flex;
+  justify-content: space-between;
+  @include mySize {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .search-drop{
   width: 288px;
   font-family: 'Source Sans Pro', sans-serif;
   color: #888;
   font-size: 14px;
 }
+
+// .user-profile
+.user-profile{
+  width: 270px;
+  font-size: 14px;
+}
+
+.users {
+  .user + .user{
+    margin-top: 27px;
+  }
+}
+
+
+
+
+// .newsevents
+.calendar-messaging,
+.newsevents{
+  display: flex;
+  justify-content: space-between;
+  @include mySize{
+    flex-direction: column;
+    align-items: center;
+  }
+  & > div{
+    width: 288px;
+    font-size: 14px;
+    @include mySize{
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.newsevents{
+  & > div{
+    height: 212px;
+  }
+}
+
+.calendar-messaging{
+  & > div{
+    height: 428px;
+    .title2{
+      text-align: center;
+    }
+  }
+}
+
+.location{
+  height: 275px;
+  font-size: 14px;
+}
+
+.video-container{
+  height: 340px;
+}
+
+

@@ -11,9 +11,9 @@ if(stages){
         
         for(let j=0; j<stagesItems.length; j++){
           if(j<num && num != 1){
-            stagesItems[j].classList.add('stages__item-active');
+            stagesItems[j].classList.add('stages__item--active');
           } else {
-            stagesItems[j].classList.remove('stages__item-active');
+            stagesItems[j].classList.remove('stages__item--active');
           }
         }
       }

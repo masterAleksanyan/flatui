@@ -37,13 +37,13 @@
       border-radius: 1px;
       transform: rotate(45deg);
     }
-    &-red{
+    &--red{
       background-color: #e75735;
       &::after{
         background-color: #e75735;
       }
     }
-    &-green{
+    &--green{
       background-color: #4eb7a8;
       &::after{
         background-color: #4eb7a8;
@@ -60,10 +60,10 @@
     height: 21px;
     background-color: #959595;
     border-radius: 50%;
-    &-red{
+    &--red{
       background-color: #e75735;
     }
-    &-green{
+    &--green{
       background-color: #4eb7a8;
     }
   }

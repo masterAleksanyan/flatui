@@ -1,7 +1,4 @@
-mixin arrow(nextOrprev, disabled)
-  if disabled
-    button(class="arrow-btn arrow-btn_"+nextOrprev disabled)
-      span.arrow-btn_icon
-  else
-    button(class="arrow-btn arrow-btn_"+nextOrprev)
-      span.arrow-btn_icon
+mixin arrow(options)
+  button(class="arrow-btn arrow-btn--"+options.side 
+        disabled=(options.disabled ? 'disabled' : false))
+    span.arrow-btn__icon

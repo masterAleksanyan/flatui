@@ -1,9 +1,9 @@
 mixin stagesItem(options)
-  div(class="stages stages__"+(options.color?options.color:""))
+  div(class="stages stages--"+(options.color?options.color:""))
     .stages__full
       - for (var i = 1; i <= options.items; i++)
       if i <= options.level && options.level != 1
-        span.stages__item.stages__item-active= i
+        span.stages__item.stages__item--active= i
       else
         span.stages__item= i
     div(class="stages__level" style="width: "+(options.level-1)*(100/(options.items-1))+"%")

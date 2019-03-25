@@ -9,7 +9,15 @@
   align-items: center;
   cursor: pointer;
   outline: none;
-  &_icon{
+  &--next .arrow-btn__icon{
+    transform: rotateZ(45deg);
+    left: -8%;
+  }
+  &--prev .arrow-btn__icon{
+    transform: rotateZ(-135deg);
+    left: 8%;
+  }
+  &__icon{
     border-right: 3px solid #4eb7a8;
     border-top: 3px solid #4eb7a8;
     width: 15px;
@@ -18,26 +26,18 @@
     position: relative;
     transition: inherit;
   }
-  &_next span{
-    transform: rotateZ(45deg);
-    left: -10%;
-  }
-  &_prev span{
-    transform: rotateZ(-135deg);
-    left: 10%;
-  }
-  &:not(:disabled):hover{
+  &:hover{
     background-color: #4eb7a8;
     transition: .3s;
-    span{
+    .arrow-btn__icon{
       border-color: #fff;
     }
   }
   &:disabled{
-    border: none;
+    border-color: #e5e5e5;
     background-color: #e5e5e5;
     cursor: default;
-    span{
+    .arrow-btn__icon{
       border-color: #fff;
     }
   }

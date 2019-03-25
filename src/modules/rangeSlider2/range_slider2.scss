@@ -35,13 +35,13 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    &-red{
+    &--red{
       background-color: #e75735;
       .range-slide2__btn{
         background-color: #e75735;
       }
     }
-    &-green{
+    &--green{
       background-color: #4eb7a8;
       .range-slide2__btn{
         background-color: #4eb7a8;

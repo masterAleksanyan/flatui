@@ -1,4 +1,4 @@
-let charts = document.querySelectorAll('.pie_chart_item');
+let charts = document.querySelectorAll('.pie-chart');
 let elem = null;
 
 for(let i=0; i<charts.length; i++){
@@ -16,11 +16,11 @@ function updateDonutChart (percent, donut) {
       percent = 0;
   }
   var deg = Math.round(360 * (percent / 100));
-  var elemPie = elem.querySelector('.pie');
+  var elemPie = elem.querySelector('.pie-chart__pie');
   var elemRightSide = elem.querySelector('.right-side');
   var elemLeftSide = elem.querySelector('.left-side');
-  var elemShadow = elem.querySelector('.shadow');
-  var elemNum = elem.querySelector('.num');
+  var elemShadow = elem.querySelector('.pie-chart__shadow');
+  var elemNum = elem.querySelector('.pie-chart__num');
 
   if(percent > 50){
     elemPie.style.clip = 'rect(auto, auto, auto, auto)';

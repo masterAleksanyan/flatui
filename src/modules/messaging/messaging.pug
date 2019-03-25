@@ -1,0 +1,18 @@
+mixin messaging(options)
+  .messaging
+    .messaging__header
+      h3.messaging__username= options.name
+    .messaging__main
+      .admin
+        .admin__photo
+          img(src="assets/img/"+options.photoname alt=""+options.alt)
+        .admin__icons
+          a(class="admin__icons-item" href=""+(options.chatHref ? options.chatHref : '#'))
+            i.icon-chat
+          a(class="admin__icons-item" href=""+(options.photoHref ? options.photoHref : '#'))
+            i.icon-camera
+        .admin__welcome
+          p= options.welcomeText
+      form(class="guest" action=""+options.action)
+        textarea(class="guest__message" placeholder="Messages")
+        button(class="guest__btn" type="submit" value="Reply")

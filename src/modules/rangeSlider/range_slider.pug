@@ -1,5 +1,5 @@
-mixin range_slider(number, redGreen)
+mixin range_slider(options)
   .range-slide
     .range-slide__row
-    span(class="range-slide__num range-slide__num-"+redGreen)= number
-    span(class="range-slide__circle range-slide__circle-"+redGreen)
+    span(class="range-slide__num range-slide__num--"+options.color)= options.lavel
+    span(class="range-slide__circle range-slide__circle--"+options.color)

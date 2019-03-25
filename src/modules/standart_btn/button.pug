@@ -1,9 +1,5 @@
-mixin button(bigOrsmall, redOrgreen, text, unikalClass)
-  - var bs = "st-btn_"+bigOrsmall
-  - var rg = "st-btn_"+redOrgreen
-  if (unikalClass)
-    button(class="st-btn "+bs +" "+rg +" "+unikalClass)= text
-      span
-  else
-    button(class="st-btn "+bs +" "+rg)= text
-      span
+mixin button(options)
+  - var bs = "st-btn--"+options.size
+  - var rg = "st-btn--"+options.color
+    button(class="st-btn "+bs +" "+rg +" "+(options.myClass ? options.myClass : ""))= options.text
+      span.st-btn__circle

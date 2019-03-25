@@ -12,9 +12,9 @@ mixin dropDown(id, array)
     input(class="drop__inp" id=""+id type="checkbox" placeholder="Choose An Option")
     label(class="drop__label" for=""+id)
       span.drop__btn
-    .drop__list
+    .drop-list
       - for (var i=0; i<array.length; i++)
-        input(class="drop__list-inp input-hidden" id=""+id+i 
+        input(class="drop-list__inp" id=""+id+i 
               type="radio" name="r_"+id
               checked=(i == 0 ? 'checked' : false))
-        label(class="drop__list-item" for=""+id+i )= array[i]
+        label(class="drop-list__item" for=""+id+i )= array[i]

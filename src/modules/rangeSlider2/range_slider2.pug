@@ -1,7 +1,7 @@
-mixin range_slider2(number, redGreen)
+mixin range_slider2(options)
   .range-slide2
     .range-slide2__row
-    div(class="range-slide2__level range-slide2__level-"+redGreen data-level=""+number)
+    div(class="range-slide2__level range-slide2__level--"+options.color data-level=""+options.lavel)
       span.range-slide2__btn
     .range-slide2__nums
       span 0

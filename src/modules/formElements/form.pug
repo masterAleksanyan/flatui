@@ -1,15 +1,15 @@
 mixin input(options)
   p.inp
-    input(class="inp_item "+(options.thisClass ? options.thisClass : "") 
+    input(class="inp__item "+(options.thisClass ? options.thisClass : "") 
       type=(options.type?options.type:"text") 
       name=(options.name?options.name:"")
       placeholder=(options.placeholder?options.placeholder:""))
-    span.msg.msg__err Error
-    span.msg.msg__ok  Thanks!
+    span.inp__msg.inp__msg--err Error
+    span.inp__msg.inp__msg--ok  Thanks!
 
 mixin textarea(options)
   p.inp
-    textarea(class="inp_item "+(options.thisClass ? options.thisClass : "")
+    textarea(class="inp__item "+(options.thisClass ? options.thisClass : "")
       name=(options.name ? options.name : false)
       placeholder=(options.placeholder ? options.placeholder : ""))
 
@@ -20,8 +20,8 @@ mixin radioOffON(options)
         checked=(options.checked ? "checked" : false)
         disabled=(options.disabled ? "disabled" : false))
       p.offon-btn
-        span(class="offon-btn__item offon-btn__item-off") Off
-        span(class="offon-btn__item offon-btn__item-on") On
+        span(class="offon-btn__item offon-btn__item--off") Off
+        span(class="offon-btn__item offon-btn__item--on") On
       | #{text}
 
 mixin boxes(options)

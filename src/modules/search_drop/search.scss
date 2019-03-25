@@ -34,9 +34,6 @@
   }
 }
 
-.input-hidden{
-  @include inputHide;
-}
 
 //  drop
 .drop{
@@ -72,7 +69,7 @@
       transform: rotate(45deg);
     }
   }
-  &__list{
+  &-list{
     background-color: #4eb7a8;
     position: absolute;
     left: 0;
@@ -92,15 +89,18 @@
       color: #888;
       line-height: 2em;
     }
-    &-item{
+    &__item{
       line-height: 2.5em;
       padding-left: .95em;
       order: 0;
     }
+    &__inp{
+      @include inputHide;
+    }
   }
   &__inp{
     @include inputHide;
-    &:checked ~ .drop__list{
+    &:checked ~ .drop-list{
       height: auto;
       z-index: 999;
     }
@@ -114,7 +114,7 @@
         }
       }
     }
-    &:focus + .drop__label{
+    &.focuselem + .drop__label{
       .drop__btn{
         box-shadow: 0 0 1px 1px rgba(0,100,255,0.8);
       }

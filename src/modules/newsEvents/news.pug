@@ -1,0 +1,19 @@
+mixin news(options)
+  .news-events
+    .news-events__img
+      img(src="assets/img/"+options.photoname alt=""+options.alt)
+    if options.type == 'news'
+      .news-events__content.news-content
+        h2.news-content__title= options.title
+        span.news-content__date= options.date
+        p.news-content__text= options.text
+    if options.type == 'events'
+      .news-events__content.events-content
+        p.events-content__date
+          span= options.day
+          = options.month
+        h3.events-content__title= options.title
+        p.events-content__text= options.text
+        a(href=""+(options.link ? options.link : '#')
+          class="events__addtocalendar")= options.linktext
+      

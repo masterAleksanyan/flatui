@@ -23,7 +23,7 @@
     transform: translateY(-50%);
     margin-top: 2px;
     z-index: 9;
-    &-active{
+    &--active{
       color: #fff;
     }
   }
@@ -34,14 +34,14 @@
     height: 100%;
     width: 25%;
   }
-  &__red{
-    .stages__item-active,
+  &--red{
+    .stages__item--active,
     .stages__level{
       background-color: #e75735;
     }
   }
-  &__green{
-    .stages__item-active,
+  &--green{
+    .stages__item--active,
     .stages__level{
       background-color: #4eb7a8;
     }

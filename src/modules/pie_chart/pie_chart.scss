@@ -1,18 +1,12 @@
-.donut-size {
-  font-size: 95px;
-  display: inline-block;
-}
-
-.pie-wrapper {
-  position: relative;
-  width: 1em;
-  height: 1em;
-  margin: 0px auto;
-  box-sizing: border-box;
-  *{
+.pie-chart{
+  &__wrapper{
+    position: relative;
+    width: 1em;
+    height: 1em;
+    margin: 0px auto;
     box-sizing: border-box;
   }
-  .pie{
+  &__pie{
     position: absolute;
     top: 0px;
     left: 0px;
@@ -20,20 +14,7 @@
     height: 100%;
     clip: rect(0, 1em, 1em, 0.5em);
   }
-  .half-circle{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    border: .1em solid #e75735;
-    border-radius: 50%;
-    clip: rect(0em, 0.5em, 1em, 0em);
-  }
-  .right-side{
-    transform: rotate(0deg);
-  }
-  .label{
+  &__label{
     position: absolute;
     top: 0.52em;
     right: 0.4em;
@@ -50,15 +31,28 @@
     cursor: default;
     z-index: 2;
   }
-  .smaller{
-    padding-bottom: 20px;
-    color: #BDC3C7;
-    font-size: .45em;
-  }
-  .shadow{
+  &__shadow{
     width: 100%;
     height: 100%;
 //    border: 0.1em solid #BDC3C7;
     border-radius: 50%;
+  }
+  .half-circle{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: .1em solid #e75735;
+    border-radius: 50%;
+    clip: rect(0em, 0.5em, 1em, 0em);
+  }
+  .right-side{
+    transform: rotate(0deg);
+  }
+  .smaller{
+    padding-bottom: 20px;
+    color: #BDC3C7;
+    font-size: .45em;
   }
 }

@@ -8,6 +8,11 @@ include modules/stages/stages.pug
 include modules/formElements/form.pug
 include modules/search_drop/search.pug
 include modules/user/user.pug
+include modules/newsEvents/news.pug
+include modules/map/map.pug
+include modules/calendar/calendar.pug
+include modules/messaging/messaging.pug
+include modules/video/video.pug
 
 doctype html
 html
@@ -16,32 +21,33 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title FlatUi Components
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript")
   body
     .wrapper
       div
         h2.title2 Standart buttons
         .st-buttons
           div
-            +button('small', 'green', 'button')
-            +button('big', 'green', 'button')
+            +button({size: 'small',color: 'green',text: 'button'})
+            +button({size: 'big',color: 'green',text: 'button'})
           div
-            +button('big', 'red', 'button')
-            +button('small', 'red', 'button')
+            +button({size: 'big',color: 'red',text: 'button'})
+            +button({size: 'small',color: 'red',text: 'button'})
       div
         h2.title2 Arrow buttons
         .arrow-buttons
           div
-            +arrow('prev')
-            +arrow('next')
+            +arrow({side: 'prev'})
+            +arrow({side: 'next'})
           div
-            +arrow('prev', 'disabled')
-            +arrow('next', 'disabled')
+            +arrow({side: 'prev', disabled: 'disabled'})
+            +arrow({side: 'next', disabled: 'disabled'})
           div
-            +arrow('prev')
-            +arrow('next')
+            +arrow({side: 'prev'})
+            +arrow({side: 'next'})
       div
         h2.title2 PERCENTAGES / PIE CHART
-        .pie-chart
+        .pie-chart-container
           +pie_chart(0, true)
           +pie_chart(38, true)
           +pie_chart(62, true)
@@ -50,8 +56,8 @@ html
       div
         h2.title2 Sliders
         .slider-block
-          +range_slider(36, 'red')
-          +range_slider2(75, 'green')
+          +range_slider({lavel: 36,color: 'red'})
+          +range_slider2({lavel: 75,color: 'green'})
       div
         h2.title2 Stages
         .stages-block
@@ -75,8 +81,8 @@ html
                 +boxes({name: 'box1', checked: 'checked'})
                 +boxes({name: 'box2'})
           p
-            +button('big', 'green', 'submit', 'form_btn')
-      .flex-between
+            +button({size: 'big',color: 'green',text: 'submit',myClass: 'form_btn'})
+      .searchdrop_userprofile
         div
           h2.title3 SEARCH / DROP DOWN
           form.search-drop
@@ -87,6 +93,40 @@ html
           h2.title3 USER  PROFILE
           .users
             +user({name: 'John Smith', vocation: 'UX  DESIGNER', photoname: 'user1.png'})
+            +user({name: 'Sarah Brown', vocation: 'DEVELOPER', photoname: 'user2.png'})
+      div
+        h2.title2 NEWS &amp; EVENTS
+        .newsevents
+          +news({photoname: 'velik.png', 
+                type: 'news',
+                title: 'It’s all going downhill',
+                date: '24  AUGUST  2013',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'})
+          +news({photoname: 'house.png', 
+                type: 'events',
+                day: '24',
+                month: 'Aug',
+                title: 'THIS IS THE TITLE',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                linktext: 'ADD  TO  CALENDAR'})
+      div
+        h2.title2 Location
+        .location
+          +map({
+            inscriptionText: 'Meet us!',
+            addresText: '1259  CALIFORNIA ST San Francisco, CA'
+          })
+      .calendar-messaging
+        div
+          h2.title2 Calendar
+          
+        div
+          h2.title2 Messaging
+          
+      div
+        h2.title2 Video
+        .video-container
+          +video()
 
 
 

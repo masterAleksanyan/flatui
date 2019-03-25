@@ -2,13 +2,14 @@ mixin user(options)
   .user
     .user__img
       img(src="assets/img/"+options.photoname)
-    .user__about
-      h2.user__name= options.name
-      h3.user__vocation= options.vocation
-      p.user__soc
-        a(href="#")
+    .user-about
+      h2.user-about__name
+        a(href=""+(options.userlink ? options.userlink : '#'))= options.name
+      h3.user-about__vocation= options.vocation
+      p.user-soc
+        a(class="user-soc__item user-soc__item--fb" href=""+(options.facebooklink ? options.facebooklink : '#'))
           i.icon-fb
-        a(href="#")
+        a(class="user-soc__item user-soc__item--tw" href=""+(options.twitterlink ? options.twitterlink : '#'))
           i.icon-tw
-        a(href="#")
+        a(class="user-soc__item user-soc__item--dribbble" href=""+(options.dribbblelink ? options.dribbblelink : '#'))
           i.icon-dribbble
