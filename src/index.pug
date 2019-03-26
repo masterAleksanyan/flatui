@@ -119,10 +119,13 @@ html
       .calendar-messaging
         div
           h2.title2 Calendar
-          
+          +calendar()
         div
           h2.title2 Messaging
-          
+          +messaging({photoname: 'user2.png', 
+                      alt: 'user2', 
+                      name: 'Sarah Brown',
+                      welcomeText: 'Hey! So are we cool to meet at the art gallery? Say 8pm'})
       div
         h2.title2 Video
         .video-container

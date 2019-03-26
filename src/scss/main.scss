@@ -95,6 +95,7 @@ body {
 @import "../modules/calendar/calendar.scss";
 @import "../modules/messaging/messaging.scss";
 @import "../modules/video/video.scss";
+@import "../modules/calendar/jquery-ui.min.css";
 
 
 
@@ -299,7 +300,7 @@ body {
 
 .calendar-messaging{
   & > div{
-    height: 428px;
+    font-size: 14px;
     .title2{
       text-align: center;
     }

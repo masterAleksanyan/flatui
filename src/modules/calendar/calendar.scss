@@ -1,0 +1,148 @@
+// custom datepicker style
+
+.ui-datepicker-year{
+  display: none;
+}
+.ui-datepicker table{margin: 0;}
+.ui-datepicker-month{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -.72px;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.8em;
+}
+.ui-datepicker-inline{
+  width: 100%;
+  padding: 0;
+}
+.ui-widget.ui-widget-content{
+  border: none;
+}
+.ui-datepicker-header{
+  border: none;
+  background-color: #d54c2c;
+  border-radius: 0;
+}
+.ui-datepicker .ui-datepicker-header{
+  padding: 0;
+}
+
+.ui-datepicker-calendar{
+  thead{
+    background-color: #e75735;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 9px;
+    line-height: 3em;
+    th{
+      padding: 0;
+    }
+  }
+}
+.ui-datepicker-today .ui-state-active,
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+  background-color: #e75735 !important;
+  color: #fff !important;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next{
+  top: 50%;
+  transform: translateY(-50%);
+  &:hover{
+    background: none;
+    border: 1px solid #fff;
+  }
+  .ui-icon{
+    margin: 0;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+}
+.ui-datepicker .ui-datepicker-prev{
+  left: 10px;
+  .ui-icon{
+    transform: translateY(-50%) rotate(-135deg);
+    margin-left: -3px;
+  }
+}
+.ui-datepicker .ui-datepicker-next{
+  right: 10px;
+  .ui-icon{
+    transform: translateY(-50%) rotate(45deg);
+    margin-left: -6px;
+  }
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+  text-align: center;
+  padding: 0;
+  border: 1px solid #fff;
+  background-color: #f2f2f2;
+  height: 39px;
+  line-height: 38px;
+  color: #868686;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+}
+.ui-datepicker-other-month a{
+  color: #fff !important;
+}
+.ui-datepicker td{
+  padding: 0;
+}
+
+// custom datepicker style end
+
+
+
+// my css
+.datepicker-block{
+  
+  &__today{
+    background-color: #e75735;
+    color: #fff;
+    font-size: 5.71em;
+    line-height: .8;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding: 22px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  &__footer{
+    background-color: #e5e5e5;
+    padding: 20px;
+    line-height: .8;
+    color: #868686;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

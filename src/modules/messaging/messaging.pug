@@ -1,18 +1,18 @@
 mixin messaging(options)
   .messaging
     .messaging__header
-      h3.messaging__username= options.name
-    .messaging__main
-      .admin
-        .admin__photo
+      h3.messaging__adminname= options.name
+    .messaging__content
+      .msg-admin
+        .msg-admin__photo
           img(src="assets/img/"+options.photoname alt=""+options.alt)
-        .admin__icons
-          a(class="admin__icons-item" href=""+(options.chatHref ? options.chatHref : '#'))
+        .msg-icons
+          a(class="msg-icons__item" href=""+(options.chatHref ? options.chatHref : '#'))
             i.icon-chat
-          a(class="admin__icons-item" href=""+(options.photoHref ? options.photoHref : '#'))
+          a(class="msg-icons__item" href=""+(options.photoHref ? options.photoHref : '#'))
             i.icon-camera
-        .admin__welcome
+        .msg-admin__welcome
           p= options.welcomeText
-      form(class="guest" action=""+options.action)
-        textarea(class="guest__message" placeholder="Messages")
-        button(class="guest__btn" type="submit" value="Reply")
+      .msg-guest
+        textarea(class="msg-guest__message" placeholder="Messages")
+        +button({size: 'big',color: 'green',text: 'Reply',myClass: 'form_btn'})
