@@ -1,4 +1,3 @@
-//import "../../node_modules/jquery/dist/jquery.min.js"
 // plagins
 import "../modules/calendar/jquery-ui.min.js"
 import "../modules/pie_chart2/jquery.jchart.js"
@@ -13,6 +12,7 @@ import "../modules/stages/stages.js"
 import "../modules/formElements/form.js"
 import "../modules/map/map.js"
 import "../modules/calendar/calendar.js"
+import "../modules/video/video.js"
 
 // // javascript
 //window.onload = function(){
