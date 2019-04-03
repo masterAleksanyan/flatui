@@ -1,5 +1,4 @@
 import "jquery"
-import "popper.js"
 import './scss/main.scss';
 import './js/common';
 

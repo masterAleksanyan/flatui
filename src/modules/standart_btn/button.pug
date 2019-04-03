@@ -1,5 +1,4 @@
 mixin button(options)
   - var bs = "st-btn--"+options.size
   - var rg = "st-btn--"+options.color
-    button(class="st-btn "+bs +" "+rg +" "+(options.myClass ? options.myClass : ""))= options.text
-      span.st-btn__circle
+    button(class="st-btn ripple-elem "+bs +" "+rg +" "+(options.myClass ? options.myClass : ""))= options.text

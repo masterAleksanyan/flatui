@@ -7,9 +7,11 @@ mixin messaging(options)
         .msg-admin__photo
           img(src="assets/img/"+options.photoname alt=""+options.alt)
         .msg-icons
-          a(class="msg-icons__item" href=""+(options.chatHref ? options.chatHref : '#'))
+          a(class="msg-icons__item" 
+            href=""+(options.chatHref ? options.chatHref : '#'))
             i.icon-chat
-          a(class="msg-icons__item" href=""+(options.photoHref ? options.photoHref : '#'))
+          a(class="msg-icons__item" 
+            href=""+(options.photoHref ? options.photoHref : '#'))
             i.icon-camera
         .msg-admin__welcome
           p= options.welcomeText

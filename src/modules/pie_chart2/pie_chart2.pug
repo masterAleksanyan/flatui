@@ -1,2 +1,7 @@
-mixin pie_chart2(id)
-  div(id=""+id class="elem-jchart")
+mixin pie_chart2(options)
+  - let names=[], values=[], colors=[]
+  - for (let i=0; i<options.length; i++)
+    - names.push(options[i].name)
+    - values.push(options[i].value)
+    - colors.push(options[i].color)
+  div(class="elem-jchart" data-names=""+names data-values=""+values data-colors=""+colors)

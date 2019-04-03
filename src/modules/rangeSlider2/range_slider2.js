@@ -1,6 +1,6 @@
 let slide2__btn = document.querySelectorAll('.range-slide2__btn');
 
-if(slide2__btn){
+if(slide2__btn.length){
   for(let i = 0; i<slide2__btn.length; i++){
     
     let th = slide2__btn[i];

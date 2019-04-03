@@ -3,11 +3,11 @@ import "../modules/calendar/jquery-ui.min.js"
 import "../modules/pie_chart2/jquery.jchart.js"
 
 // modules
+import "../vendor/ripple.js"
 import "../modules/pie_chart/pie_chart.js"
 import "../modules/pie_chart2/pie_chart2.js"
 import "../modules/rangeSlider/range_slider.js"
 import "../modules/rangeSlider2/range_slider2.js"
-import "../modules/standart_btn/button.js"
 import "../modules/stages/stages.js"
 import "../modules/formElements/form.js"
 import "../modules/map/map.js"
@@ -39,13 +39,15 @@ import "../modules/video/video.js"
 // // jQuery
 $(document).ready(function(){
   let inputs = $('input, button, textarea, a');
-  inputs.on('keyup', function(ev){
-    if(ev.keyCode === 9){
+  if(inputs.length){
+    inputs.on('keyup', function(ev){
+      if(ev.keyCode === 9){
+        inputs.removeClass('focuselem');
+        $(this).addClass('focuselem');
+      }
+    });
+    inputs.on('blur', function(){
       inputs.removeClass('focuselem');
-      $(this).addClass('focuselem');
-    }
-  });
-  inputs.on('blur', function(){
-    inputs.removeClass('focuselem');
-  })
-})
+    }); 
+  }
+});

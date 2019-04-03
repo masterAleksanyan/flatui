@@ -52,7 +52,10 @@ html
           +pie_chart(38, true)
           +pie_chart(62, true)
           +pie_chart(89, true)
-          +pie_chart2('elem-jchart')
+          +pie_chart2([ {name: 'JavaScript', value: '130', color: '#e75735'},
+                        {name: 'JQuery', value: '100', color: '#747474'},
+                        {name: 'Html', value: '190', color: '#e5e5e5'},
+                        {name: 'Css', value: '200', color: '#4eb7a8'} ])
       div
         h2.title2 Sliders
         .slider-block
@@ -113,8 +116,12 @@ html
         h2.title2 Location
         .location
           +map({
+            cor: '47.60, 41.8',
+            center: '47.60, 41.8',
             inscriptionText: 'Meet us!',
-            addresText: '1259  CALIFORNIA ST San Francisco, CA'
+            addresText: '1259  CALIFORNIA ST San Francisco, CA',
+            zoom: 9,
+            geoicon: 'geo_icon.svg'
           })
       .calendar-messaging
         div

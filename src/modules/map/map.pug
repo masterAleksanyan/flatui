@@ -1,5 +1,8 @@
 mixin map(options)
-  #map.map-block
+  .map(class="map-block" data-cor=""+options.cor 
+                          data-center=""+options.center
+                          data-zoom=""+options.zoom
+                          data-icon=""+options.geoicon)
     .map-footer
       .map-addres
         span.map-addres__inscription= options.inscriptionText

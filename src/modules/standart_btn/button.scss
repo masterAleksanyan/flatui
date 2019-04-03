@@ -9,6 +9,7 @@
   line-height: 1;
   box-sizing: border-box;
   cursor: pointer;
+  overflow: hidden;
   &--big{
     width: 118px;
     height: 32px;
@@ -43,21 +44,22 @@
       transition: all .3s;
     }
   }
-  &__circle{
-    position: absolute;
-    transform: translate(-50%, -50%) scale(0);
-    display: block;
-    width: 4em;
-    height: 4em;
+  .ripple{
     border-radius: 50%;
-    background-color: #fafafa;
-    opacity: .3;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 0.4s linear;
   }
   &:active{
     box-shadow: none;
-    .st-btn__circle{
-      transform: translate(-50%, -50%) scale(1);
-      transition: .1s;
-    }
   }
 }
+
+@keyframes ripple {
+  to {
+    transform: scale(.8);
+    opacity: .3;
+  }
+}
+

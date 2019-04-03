@@ -1,8 +1,26 @@
 .elem-jchart {
+  position: relative;
   display: inline-block;
-  width: 95px;
-  height: 95px;
+  width: 1em;
+  height: 1em;
   vertical-align: top;
+  &__names{
+    position: absolute;
+    top: 10px;
+    left: 100%;
+    font-size: .1em;
+    transform: scale(0);
+    @include transition;
+  }
+  &__items{
+    padding: .3em;
+    text-align: center;
+    font-weight: bold;
+  }
+  &:hover &__names{
+    transform: scale(1);
+    @include transition;
+  }
 }
 .jchart__body, .jchart{height: 100%;}
 .jchart__figure{padding: 0;margin: 0;height: 100%;}
@@ -11,4 +29,8 @@
 }
 circle{
   stroke-width: 7;
+}
+.jchart__summary{
+  font-size: .06em;
+  fill: #9d9d9d;
 }

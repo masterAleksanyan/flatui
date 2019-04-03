@@ -1,5 +1,5 @@
 let stages = document.querySelectorAll('.stages');
-if(stages){
+if(stages.length){
   for(let i = 0; i<stages.length; i++){
     stages[i].addEventListener('click', function(ev){
       if(ev.target.className.match('stages__item')){
@@ -17,7 +17,6 @@ if(stages){
           }
         }
       }
-      
     });
   }
 }

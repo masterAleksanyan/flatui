@@ -1,11 +1,13 @@
 let charts = document.querySelectorAll('.pie-chart');
 let elem = null;
 
-for(let i=0; i<charts.length; i++){
-  let pre = charts[i].attributes['data-pracent'].value;
-  let b = charts[i].attributes['data-boolean'].value;
-  elem = charts[i];
-  updateDonutChart(pre, b);
+if(charts.length){
+  for(let i=0; i<charts.length; i++){
+    let pre = charts[i].attributes['data-pracent'].value;
+    let b = charts[i].attributes['data-boolean'].value;
+    elem = charts[i];
+    updateDonutChart(pre, b);
+  }
 }
 
 function updateDonutChart (percent, donut) {

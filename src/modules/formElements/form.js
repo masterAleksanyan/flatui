@@ -3,7 +3,7 @@ let mailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\
 let inputs = document.querySelectorAll('input.inp__item');
 let forms = document.querySelectorAll('form.form_elements');
 
-if(inputs){
+if(inputs.length){
   for(let i=0; i<inputs.length; i++){
     inputs[i].addEventListener('focus', function(){
       this.addEventListener('input', function(){
@@ -23,7 +23,7 @@ if(inputs){
   }
 }
 
-if(forms){
+if(forms.length){
   for(let i=0; i<forms.length; i++){
     forms[i].addEventListener('submit', function(ev){
       let thisForm = this.querySelectorAll('input.inp__item');

@@ -1,5 +1,5 @@
 let r_circle = document.querySelectorAll('.range-slide__circle');
-if(r_circle){
+if(r_circle.length){
   for(let i=0; i<r_circle.length; i++){
     let th = r_circle[i];
     let pagex = 0;
