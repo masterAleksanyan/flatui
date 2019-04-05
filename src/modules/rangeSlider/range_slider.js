@@ -38,6 +38,15 @@ if(r_circle.length){
     let rowW = parent.querySelector('.range-slide__row').clientWidth;
     let slide_num = parent.querySelector('.range-slide__num');
     let p = parent.offsetLeft;
+    
+    
+    window.addEventListener('resize', ()=> {
+      let newP = parent.offsetLeft;
+      if (newP > p+20 || newP < p-20){
+        p = newP;
+      }
+    });
+    
     parent.addEventListener('click', function(ev){
       if(document.innerWidth < 1025){
         slide(ev.touches[0].pageX);

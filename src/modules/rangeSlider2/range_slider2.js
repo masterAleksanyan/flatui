@@ -8,9 +8,16 @@ if(slide2__btn.length){
     let levelElem = th.parentNode;
     let parent = th.parentNode.parentNode;
     let slideWidth = parent.clientWidth;
-    let slideOffLeft = parent.offsetLeft;
     let slideItemWidth = slideWidth/4;
     let pagex = 0;
+    
+    let slideOffLeft = parent.offsetLeft;
+    window.addEventListener('resize', ()=> {
+      let newP = parent.offsetLeft;
+      if (newP > slideOffLeft+20 || newP < slideOffLeft-20){
+        slideOffLeft = newP;
+      }
+    });
     
     parent.addEventListener('click', function(ev){
       if(document.innerWidth < 1025){

@@ -1,11 +1,9 @@
 // plagins
 import "../modules/calendar/jquery-ui.min.js"
-import "../modules/pie_chart2/jquery.jchart.js"
 
 // modules
 import "../vendor/ripple.js"
 import "../modules/pie_chart/pie_chart.js"
-import "../modules/pie_chart2/pie_chart2.js"
 import "../modules/rangeSlider/range_slider.js"
 import "../modules/rangeSlider2/range_slider2.js"
 import "../modules/stages/stages.js"

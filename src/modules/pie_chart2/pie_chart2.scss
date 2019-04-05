@@ -1,36 +1,54 @@
-.elem-jchart {
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.figure{
   position: relative;
-  display: inline-block;
   width: 1em;
   height: 1em;
-  vertical-align: top;
-  &__names{
-    position: absolute;
-    top: 10px;
-    left: 100%;
-    font-size: .1em;
-    transform: scale(0);
-    @include transition;
+  &__content{
+    height: 100%;
   }
-  &__items{
-    padding: .3em;
-    text-align: center;
-    font-weight: bold;
-  }
-  &:hover &__names{
+  &:hover .figcaption{
     transform: scale(1);
     @include transition;
   }
 }
-.jchart__body, .jchart{height: 100%;}
-.jchart__figure{padding: 0;margin: 0;height: 100%;}
-.jchart__donut__segment{
-  r: 17;
+
+.figcaption{
+  position: absolute;
+  left: 100%;
+  top: 10px;
+  transform: scale(0);
+  @include transition;
+  &__name{
+    display: flex;
+    align-items: center;
+  }
+  &__list{
+    font-size: .1em;
+  }
+  &__circle{
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin: .2em;
+    border-radius: 50%;
+  }
 }
-circle{
-  stroke-width: 7;
-}
-.jchart__summary{
-  font-size: .06em;
-  fill: #9d9d9d;
-}
+
+
+
+
+
+
+
+
