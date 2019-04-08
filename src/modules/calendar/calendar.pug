@@ -1,5 +1,8 @@
-mixin calendar()
-  .datepicker-block
+mixin calendar(options, myClass)
+  .datepicker-block(class="datepicker-block--"+options.bgColor +" "+(myClass ? myClass : false))
     .datepicker-today.datepicker-block__today
     .datepicker
-    p.datepicker-gototoday.datepicker-block__footer Today
+    p.datepicker-gototoday.datepicker-block__footer= options.btntext
+
+
+//- +calendar({btntext: 'Today', bgColor: 'red/green'}, 'c-calendar')

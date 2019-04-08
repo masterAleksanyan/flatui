@@ -1,9 +1,12 @@
-mixin pie_chart(p, b)
-  div(class="pie-chart" data-pracent=""+p data-boolean=""+b)
+mixin pie_chart(options, myClass)
+  div(class="pie-chart "+(myClass ? myClass : '') data-pracent=""+options.pracent data-boolean=""+options.boolean)
     .pie-chart__wrapper
       span.pie-chart__label
         span.pie-chart__num 0
       .pie-chart__pie
-        .left-side.half-circle
-        .right-side.half-circle
+        .left-side.half-circle(class=" half-circle--"+options.color)
+        .right-side.half-circle(class=" half-circle--"+options.color)
       .pie-chart__shadow
+
+
+//- +pie_chart(38, true/false, 'myclass')

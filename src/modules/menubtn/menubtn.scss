@@ -1,0 +1,44 @@
+.burg-btn{
+  display: none;
+  @include myWidth(1023px){
+    display: block;
+  }
+  position: relative;
+  width: 2em;
+  height: 1.8em;
+  margin-left: 10px;
+  &__item{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $color1;
+    transition: 0.5s;
+  }
+  &__item1{
+    top: 0;
+  }
+  &__item2{
+    top: 50%;
+    transform: translateY(-50%);
+    transition-delay: 0.5s;
+  }
+  &__item3{
+    bottom: 0;
+  }
+  &.active &__item1{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: top 0.8s, transform 0.4s 0.6s;
+  }
+  &.active &__item2{
+    opacity: 0;
+    transform: rotate(180deg);
+    transition-delay: 0.4s;
+  }
+  &.active &__item3{
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+    transition: bottom 0.8s, transform 0.4s 0.6s;
+  }
+}

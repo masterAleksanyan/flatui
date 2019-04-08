@@ -11,33 +11,33 @@
   cursor: pointer;
   overflow: hidden;
   &--big{
-    width: 118px;
+    padding: 0 32px;
     height: 32px;
     font-size: 12px;
     letter-spacing: 0.6px;
     border-radius: .3em;
   }
   &--small{
-    width: 78px;
+    padding: 0 16px;
     height: 22px;
     font-size: 10px;
     letter-spacing: 0.5px;
     border-radius: .2em;
   }
   &--red{
-    color: #e34a26;
-    border: 1px solid #e75735;
-    box-shadow: 0 3px #bf3e1f;
+    color: $color1dark;
+    border: 1px solid $color1;
+    box-shadow: 0 3px $color1dark;
     &:hover{
       color: #fff;
-      background-color: #e75735;
+      background-color: $color1;
       transition: all .3s;
     }
   }
   &--green{
-    color: #44ae9f;
-    border: 1px solid #4eb7a8;
-    box-shadow: 0 3px #28a290;
+    color: $color2dark;
+    border: 1px solid $color2;
+    box-shadow: 0 3px $color2dark;
     &:hover{
       color: #fff;
       background-color: #4eb7a8;
@@ -50,6 +50,7 @@
     position: absolute;
     transform: scale(0);
     animation: ripple 0.4s linear;
+    box-sizing: border-box;
   }
   &:active{
     box-shadow: none;

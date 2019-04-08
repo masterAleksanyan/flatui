@@ -1,0 +1,67 @@
+.header{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  &-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 0;
+  }
+  &__logo{
+    font-size: 2em;
+    font-weight: bold;
+    @include myWidth(1023px){
+      flex-grow: 1;
+    }
+  }
+  &__menu{
+    flex-grow: 1;
+    text-align: right;
+    padding: 0 10px;
+    @include myWidth(1023px){
+      flex-grow: auto;
+      transform-origin: right;
+      transform: scaleX(0);
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: rgba(0, 0, 0, .7);
+      @include transition;
+    }
+    &.active{
+      transform: scaleX(1);
+      @include transition;
+    }
+  }
+  &__menuitem{
+    display: inline-block;
+    margin: 0 10px;
+    @include myWidth(1023px){
+      display: block;
+      margin: 0;
+    }
+  }
+  &__menulink{
+    color: #fff;
+    letter-spacing: .05em;
+    @include transition;
+    @include myWidth(1023px){
+      display: block;
+      padding: 10px;
+    }
+    &:hover{
+      color: #e75735;
+      text-decoration: underline;
+      @include transition;
+    }
+  }
+  &__search{
+    width: 300px;
+    @include mySize{
+      width: 170px;
+    }
+  }
+}

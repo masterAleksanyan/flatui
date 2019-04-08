@@ -37,13 +37,13 @@
   &--red{
     .stages__item--active,
     .stages__level{
-      background-color: #e75735;
+      background-color: $color1;
     }
   }
   &--green{
     .stages__item--active,
     .stages__level{
-      background-color: #4eb7a8;
+      background-color: $color2;
     }
   }
 }

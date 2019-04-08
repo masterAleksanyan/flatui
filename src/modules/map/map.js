@@ -1,4 +1,5 @@
-//if($('#map').length){
+let map = document.querySelectorAll('.map');
+if(map.length){
   ymaps.ready(function(){
     let map = document.querySelectorAll('.map');
     if(map.length){
@@ -36,4 +37,4 @@
     });
     myMap.geoObjects.add(myPlacemark);
   }
-//}
+}

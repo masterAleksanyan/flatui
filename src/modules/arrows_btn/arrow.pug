@@ -1,4 +1,7 @@
-mixin arrow(options)
-  button(class="arrow-btn arrow-btn--"+options.side 
+mixin arrow(options, myClass)
+  button(class="arrow-btn arrow-btn--"+options.side +" arrow-btn--"+options.bgcolor +" "+(myClass ? myClass : '') 
         disabled=(options.disabled ? 'disabled' : false))
     span.arrow-btn__icon
+
+
+//- +arrow({side: 'prev/next', bgcolor: 'green/red', disabled: 'disabled'}, 'myClass')

@@ -1,15 +1,25 @@
-mixin user(options)
-  .user
+mixin user(options, myClass)
+  .user(class=(myClass ? myClass : false))
     .user__img
       img(src="assets/img/"+options.photoname)
-    .user-about
-      h2.user-about__name
+    .user-about(class="user-about--"+options.color)
+      h2.user-about__name(class=" user-about__name--"+options.color)
         a(href=""+(options.userlink ? options.userlink : '#'))= options.name
       h3.user-about__vocation= options.vocation
       p.user-soc
         a(class="user-soc__item user-soc__item--fb" href=""+(options.facebooklink ? options.facebooklink : '#'))
           i.icon-fb
-        a(class="user-soc__item user-soc__item--tw" href=""+(options.twitterlink ? options.twitterlink : '#'))
+        a(class="user-soc__item user-soc__item--tw user-soc__item--"+options.color href=""+(options.twitterlink ? options.twitterlink : '#'))
           i.icon-tw
         a(class="user-soc__item user-soc__item--dribbble" href=""+(options.dribbblelink ? options.dribbblelink : '#'))
           i.icon-dribbble
+
+
+//- +user({name: 'John Smith', 
+//-       vocation: 'UX  DESIGNER', 
+//-       photoname: 'user1.png',
+//-       userlink: '',
+//-       facebooklink: '',
+//-       twitterlink: '',
+//-       dribbblelink: '',
+//-       color: 'red/green'}, 'c-user-profile')

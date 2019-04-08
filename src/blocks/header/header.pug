@@ -1,0 +1,15 @@
+header.header
+  .wrapper
+    .header-content
+      .header__logo
+        a(href="#") Logo
+      ul#header-menu.header__menu
+        li.header__menuitem
+          a(class="header__menulink" href="#") Главная
+        li.header__menuitem
+          a(class="header__menulink" href="#") Категории
+        li.header__menuitem
+          a(class="header__menulink" href="#") О нас
+      .header__search
+        +search({placeholder: 'Search'})
+      +btn()

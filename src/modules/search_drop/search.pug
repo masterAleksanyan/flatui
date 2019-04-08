@@ -1,20 +1,31 @@
-mixin search(options)
-  p.searching
-    input(class="searching__input "+ (options.class ? "searching__"+options.class : "")
+mixin search(options, myClass)
+  p.searching(class=(myClass ? myClass : false))
+    input(class="searching__input "+ (options.error ? "searching__input--"+options.error : "")
           type="search" 
           placeholder=""+options.placeholder)
-    button(class="searching__btn" type="button")
+    button(class="searching__btn searching__btn--"+options.color type="button")
       i.icon-search
 
 
-mixin dropDown(id, array)
-  .drop
-    input(class="drop__inp" id=""+id type="checkbox" placeholder="Choose An Option")
-    label(class="drop__label" for=""+id)
-      span.drop__btn
-    .drop-list
-      - for (var i=0; i<array.length; i++)
-        input(class="drop-list__inp" id=""+id+i 
-              type="radio" name="r_"+id
+//- +search({placeholder: 'Search', color: 'red/green'}, 'c-search-drop')  //// normal
+//- +search({placeholder: 'I’ve not found what I’m looking for...', error: 'not'}, 'c-search-drop')  //// error
+
+
+mixin dropDown(options, myClass)
+  .drop(class=(myClass ? myClass : false))
+    input(class="drop__inp" id=""+options.id type="checkbox" 
+          placeholder=""+(options.placeholder ? options.placeholder : 'Choose An Option'))
+    label(class="drop__label" for=""+options.id)
+      span.drop__btn(class=" drop__btn--"+options.color)
+    .drop-list(class=" drop-list--"+options.color)
+      - for (var i=0; i<options.array.length; i++)
+        input(class="drop-list__inp" id=""+options.id+i 
+              type="radio" name="r_"+options.id
               checked=(i == 0 ? 'checked' : false))
-        label(class="drop-list__item" for=""+id+i )= array[i]
+        label(class="drop-list__item" for=""+options.id+i )= options.array[i]
+
+
+//- +dropDown({ id: 'drop1',
+//-             color: 'reg/green',
+//-             array: ['Choose An Option', 'Choose An', 'Choose', 'Lorem ipsum'],
+//-             placeholder: ''})

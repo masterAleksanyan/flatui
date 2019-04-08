@@ -1,5 +1,5 @@
-mixin news(options)
-  .news-events
+mixin news(options, myClass)
+  .news-events(class=(myClass ? myClass : false))
     .news-events__img
       img(src="assets/img/"+options.photoname alt=""+options.alt)
     if options.type == 'news'
@@ -16,4 +16,11 @@ mixin news(options)
         p.events-content__text= options.text
         a(href=""+(options.link ? options.link : '#')
           class="events__addtocalendar")= options.linktext
-      
+
+
+//- +news({photoname: 'velik.png', 
+//-       alt: '',
+//-       type: 'news/events',
+//-       title: 'It’s all going downhill',
+//-       date: '24  AUGUST  2013',
+//-       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'}, 'c-newsevents')

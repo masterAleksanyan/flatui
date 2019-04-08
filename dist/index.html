@@ -5,243 +5,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>FlatUi Components</title>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=&lt;ваш API-ключ&gt;" type="text/javascript"></script>
+  <title>Shoping Center</title>
   <link href="app.css" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header-content">
+        <div class="header__logo"><a href="#">Logo</a></div>
+        <ul class="header__menu" id="header-menu">
+          <li class="header__menuitem"><a class="header__menulink" href="#">Главная</a></li>
+          <li class="header__menuitem"><a class="header__menulink" href="#">Категории</a></li>
+          <li class="header__menuitem"><a class="header__menulink" href="#">О нас</a></li>
+        </ul>
+        <div class="header__search">
+          <p class="searching"><input class="searching__input " type="search" placeholder="Search" /><button class="searching__btn searching__btn--undefined" type="button"><i class="icon-search"></i></button></p>
+        </div>
+        <div class="burg-btn " id="burger_btn"><span class="burg-btn__item burg-btn__item1"></span><span class="burg-btn__item burg-btn__item2"></span><span class="burg-btn__item burg-btn__item3"></span></div>
+      </div>
+    </div>
+  </header>
   <div class="wrapper">
-    <div>
-      <h2 class="title2">Standart buttons</h2>
-      <div class="st-buttons">
-        <div><button class="st-btn ripple-elem st-btn--small st-btn--green ">button</button><button class="st-btn ripple-elem st-btn--big st-btn--green ">button</button></div>
-        <div><button class="st-btn ripple-elem st-btn--big st-btn--red ">button</button><button class="st-btn ripple-elem st-btn--small st-btn--red ">button</button></div>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">Arrow buttons</h2>
-      <div class="arrow-buttons">
-        <div><button class="arrow-btn arrow-btn--prev"><span class="arrow-btn__icon"></span></button><button class="arrow-btn arrow-btn--next"><span class="arrow-btn__icon"></span></button></div>
-        <div><button class="arrow-btn arrow-btn--prev" disabled="disabled"><span class="arrow-btn__icon"></span></button><button class="arrow-btn arrow-btn--next" disabled="disabled"><span class="arrow-btn__icon"></span></button></div>
-        <div><button class="arrow-btn arrow-btn--prev"><span class="arrow-btn__icon"></span></button><button class="arrow-btn arrow-btn--next"><span class="arrow-btn__icon"></span></button></div>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">PERCENTAGES / PIE CHART</h2>
-      <div class="pie-chart-container">
-        <div class="pie-chart" data-pracent="0" data-boolean="true">
-          <div class="pie-chart__wrapper"><span class="pie-chart__label"><span class="pie-chart__num">0</span></span>
-            <div class="pie-chart__pie">
-              <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-            <div class="pie-chart__shadow"></div>
-          </div>
-        </div>
-        <div class="pie-chart" data-pracent="38" data-boolean="true">
-          <div class="pie-chart__wrapper"><span class="pie-chart__label"><span class="pie-chart__num">0</span></span>
-            <div class="pie-chart__pie">
-              <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-            <div class="pie-chart__shadow"></div>
-          </div>
-        </div>
-        <div class="pie-chart" data-pracent="62" data-boolean="true">
-          <div class="pie-chart__wrapper"><span class="pie-chart__label"><span class="pie-chart__num">0</span></span>
-            <div class="pie-chart__pie">
-              <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-            <div class="pie-chart__shadow"></div>
-          </div>
-        </div>
-        <div class="pie-chart" data-pracent="89" data-boolean="true">
-          <div class="pie-chart__wrapper"><span class="pie-chart__label"><span class="pie-chart__num">0</span></span>
-            <div class="pie-chart__pie">
-              <div class="left-side half-circle"></div>
-              <div class="right-side half-circle"></div>
-            </div>
-            <div class="pie-chart__shadow"></div>
-          </div>
-        </div>
-        <figure class="figure">
-          <div class="figure__content"><svg class="donut" width="1em" height="1em" viewBox="0 0 38 38" aria-labelledby="beers-title beers-desc" role="img">
-              <circle class="donut-hole" cx="19" cy="19" r="15.91549430918954" fill="#fff" role="presentation"></circle>
-              <circle class="donut-ring" cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="6" role="presentation"></circle>
-              <circle class="donut-segment" cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#e75735" stroke-width="6" stroke-dasharray="15 85" stroke-dashoffset="25" aria-labelledby="donut-segment-1-title donut-segment-1-desc"></circle>
-              <circle class="donut-segment" cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#747474" stroke-width="6" stroke-dasharray="20 80" stroke-dashoffset="110" aria-labelledby="donut-segment-1-title donut-segment-1-desc"></circle>
-              <circle class="donut-segment" cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="40 60" stroke-dashoffset="90" aria-labelledby="donut-segment-1-title donut-segment-1-desc"></circle>
-              <circle class="donut-segment" cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#4eb7a8" stroke-width="6" stroke-dasharray="25 75" stroke-dashoffset="50" aria-labelledby="donut-segment-1-title donut-segment-1-desc"></circle>
-            </svg></div>
-          <figcaption class="figcaption">
-            <p class="sr-only">Donut chart showing 10 total beers. Two beers are Imperial India Pale Ales, four beers are Belgian Quadrupels, and three are Russian Imperial Stouts. The last remaining beer is unlabeled.</p>
-            <ul class="figcaption__list" aria-hidden="true" role="presentation">
-              <li class="figcaption__name"><span class="figcaption__circle" style="background-color: #e75735"></span>JavaScript</li>
-              <li class="figcaption__name"><span class="figcaption__circle" style="background-color: #747474"></span>JQuery</li>
-              <li class="figcaption__name"><span class="figcaption__circle" style="background-color: #e5e5e5"></span>Html</li>
-              <li class="figcaption__name"><span class="figcaption__circle" style="background-color: #4eb7a8"></span>Css</li>
-            </ul>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">Sliders</h2>
-      <div class="slider-block">
-        <div class="range-slide">
-          <div class="range-slide__row"></div><span class="range-slide__num range-slide__num--red">36</span><span class="range-slide__circle range-slide__circle--red"></span>
-        </div>
-        <div class="range-slide2">
-          <div class="range-slide2__row"></div>
-          <div class="range-slide2__level range-slide2__level--green" data-level="75"><span class="range-slide2__btn"></span></div>
-          <div class="range-slide2__nums"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">Stages</h2>
-      <div class="stages-block">
-        <div class="stages stages--red">
-          <div class="stages__full"><span class="stages__item stages__item--active">1</span><span class="stages__item stages__item--active">2</span><span class="stages__item">3</span><span class="stages__item">4</span><span class="stages__item">5</span></div>
-          <div class="stages__level" style="width: 25%"></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">FORM ELEMENTS</h2>
-      <form class="form_elements">
-        <div>
-          <p class="inp"><input class="inp__item " type="text" name="Name" placeholder="Your Name" /><span class="inp__msg inp__msg--err">Error</span><span class="inp__msg inp__msg--ok"> Thanks!</span></p>
-          <p class="inp"><input class="inp__item " type="email" name="email" placeholder="Your email" /><span class="inp__msg inp__msg--err">Error</span><span class="inp__msg inp__msg--ok"> Thanks!</span></p>
-          <p class="inp"><textarea class="inp__item txt_area" placeholder="Your Message"></textarea></p>
-        </div>
-        <div class="form-buttons">
-          <div>
-            <h3 class="title2 title3">TOGGLES</h3>
-            <div class="toggles"><label class="offon"><input class="offon__input" type="radio" name="r" checked="checked" />
-                <p class="offon-btn"><span class="offon-btn__item offon-btn__item--off">Off</span><span class="offon-btn__item offon-btn__item--on">On</span></p>
-              </label><label class="offon"><input class="offon__input" type="radio" name="r" />
-                <p class="offon-btn"><span class="offon-btn__item offon-btn__item--off">Off</span><span class="offon-btn__item offon-btn__item--on">On</span></p>
-              </label></div>
-          </div>
-          <div>
-            <h3 class="title2 title3">TICK BOXES</h3>
-            <div class="boxes"><label class="check"><input class="check__input" type="checkbox" name="box1" checked="checked" /><span class="check__box"></span></label><label class="check"><input class="check__input" type="checkbox" name="box2" /><span class="check__box"></span></label></div>
-          </div>
-        </div>
-        <p><button class="st-btn ripple-elem st-btn--big st-btn--green form_btn">submit</button></p>
-      </form>
-    </div>
-    <div class="searchdrop_userprofile">
-      <div>
-        <h2 class="title3">SEARCH / DROP DOWN</h2>
-        <form class="search-drop">
-          <p class="searching"><input class="searching__input " type="search" placeholder="Search" /><button class="searching__btn" type="button"><i class="icon-search"></i></button></p>
-          <p class="searching"><input class="searching__input searching__not" type="search" placeholder="I’ve not found what I’m looking for..." /><button class="searching__btn" type="button"><i class="icon-search"></i></button></p>
-          <div class="drop"><input class="drop__inp" id="drop1" type="checkbox" placeholder="Choose An Option" /><label class="drop__label" for="drop1"><span class="drop__btn"></span></label>
-            <div class="drop-list"><input class="drop-list__inp" id="drop10" type="radio" name="r_drop1" checked="checked" /><label class="drop-list__item" for="drop10">Choose An Option</label><input class="drop-list__inp" id="drop11" type="radio" name="r_drop1" /><label class="drop-list__item" for="drop11">Choose An</label><input class="drop-list__inp" id="drop12" type="radio" name="r_drop1" /><label class="drop-list__item" for="drop12">Choose</label><input class="drop-list__inp" id="drop13" type="radio" name="r_drop1" /><label class="drop-list__item" for="drop13">Lorem ipsum</label></div>
-          </div>
-        </form>
-      </div>
-      <div class="user-profile">
-        <h2 class="title3">USER PROFILE</h2>
-        <div class="users">
-          <div class="user">
-            <div class="user__img"><img src="assets/img/user1.png" /></div>
-            <div class="user-about">
-              <h2 class="user-about__name"><a href="#">John Smith</a></h2>
-              <h3 class="user-about__vocation">UX DESIGNER</h3>
-              <p class="user-soc"><a class="user-soc__item user-soc__item--fb" href="#"><i class="icon-fb"></i></a><a class="user-soc__item user-soc__item--tw" href="#"><i class="icon-tw"></i></a><a class="user-soc__item user-soc__item--dribbble" href="#"><i class="icon-dribbble"></i></a></p>
-            </div>
-          </div>
-          <div class="user">
-            <div class="user__img"><img src="assets/img/user2.png" /></div>
-            <div class="user-about">
-              <h2 class="user-about__name"><a href="#">Sarah Brown</a></h2>
-              <h3 class="user-about__vocation">DEVELOPER</h3>
-              <p class="user-soc"><a class="user-soc__item user-soc__item--fb" href="#"><i class="icon-fb"></i></a><a class="user-soc__item user-soc__item--tw" href="#"><i class="icon-tw"></i></a><a class="user-soc__item user-soc__item--dribbble" href="#"><i class="icon-dribbble"></i></a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">NEWS &amp; EVENTS</h2>
-      <div class="newsevents">
-        <div class="news-events">
-          <div class="news-events__img"><img src="assets/img/velik.png" alt="undefined" /></div>
-          <div class="news-events__content news-content">
-            <h2 class="news-content__title">It’s all going downhill</h2><span class="news-content__date">24 AUGUST 2013</span>
-            <p class="news-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</p>
-          </div>
-        </div>
-        <div class="news-events">
-          <div class="news-events__img"><img src="assets/img/house.png" alt="undefined" /></div>
-          <div class="news-events__content events-content">
-            <p class="events-content__date"><span>24</span>Aug</p>
-            <h3 class="events-content__title">THIS IS THE TITLE</h3>
-            <p class="events-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><a class="events__addtocalendar" href="#">ADD TO CALENDAR</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2 class="title2">Location</h2>
-      <div class="location">
-        <div class="map map-block" data-cor="47.60, 41.8" data-center="47.60, 41.8" data-zoom="9" data-icon="geo_icon.svg">
-          <div class="map-footer">
-            <div class="map-addres"><span class="map-addres__inscription">Meet us!</span><a class="map-addres__link" href="#">1259 CALIFORNIA ST San Francisco, CA</a></div>
-            <div class="map-geo"><a class="map-geo__item map-geo__item--location" href="#"><i class="icon-location"></i></a><a class="map-geo__item map-geo__item--geo" href="#"><i class="icon-geo"></i></a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="calendar-messaging">
-      <div>
-        <h2 class="title2">Calendar</h2>
-        <div class="datepicker-block">
-          <div class="datepicker-today datepicker-block__today"></div>
-          <div class="datepicker"></div>
-          <p class="datepicker-gototoday datepicker-block__footer">Today</p>
-        </div>
-      </div>
-      <div>
-        <h2 class="title2">Messaging</h2>
-        <div class="messaging">
-          <div class="messaging__header">
-            <h3 class="messaging__adminname">Sarah Brown</h3>
-          </div>
-          <div class="messaging__content">
-            <div class="msg-admin">
-              <div class="msg-admin__photo"><img src="assets/img/user2.png" alt="user2" /></div>
-              <div class="msg-icons"><a class="msg-icons__item" href="#"><i class="icon-chat"></i></a><a class="msg-icons__item" href="#"><i class="icon-camera"></i></a></div>
-              <div class="msg-admin__welcome">
-                <p>Hey! So are we cool to meet at the art gallery? Say 8pm</p>
+    <div class="slider">
+      <div class="slider__block">
+        <div class="slider__item active">
+          <div class="slider__news">
+            <div class="news-events">
+              <div class="news-events__img"><img src="assets/img/velik.png" alt="undefined" /></div>
+              <div class="news-events__content news-content">
+                <h2 class="news-content__title">It’s all going downhill</h2><span class="news-content__date">24 AUGUST 2013</span>
+                <p class="news-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</p>
               </div>
             </div>
-            <div class="msg-guest"><textarea class="msg-guest__message" placeholder="Messages"></textarea><button class="st-btn ripple-elem st-btn--big st-btn--green form_btn">Reply</button></div>
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider__news">
+            <div class="news-events">
+              <div class="news-events__img"><img src="assets/img/house.png" alt="undefined" /></div>
+              <div class="news-events__content events-content">
+                <p class="events-content__date"><span>24</span>Aug</p>
+                <h3 class="events-content__title">THIS IS THE TITLE</h3>
+                <p class="events-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><a class="events__addtocalendar" href="#">ADD TO CALENDAR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider__news">
+            <div class="news-events">
+              <div class="news-events__img"><img src="assets/img/velik.png" alt="undefined" /></div>
+              <div class="news-events__content news-content">
+                <h2 class="news-content__title">It’s all going downhill</h2><span class="news-content__date">24 AUGUST 2013</span>
+                <p class="news-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider__news">
+            <div class="news-events">
+              <div class="news-events__img"><img src="assets/img/house.png" alt="undefined" /></div>
+              <div class="news-events__content events-content">
+                <p class="events-content__date"><span>24</span>Aug</p>
+                <h3 class="events-content__title">THIS IS THE TITLE</h3>
+                <p class="events-content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><a class="events__addtocalendar" href="#">ADD TO CALENDAR</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <h2 class="title2">Video</h2>
-      <div class="video-container">
-        <div class="video-container"><video class="video" poster="assets/img/video.png">
-            <source src="assets/video/videoplayback.webm" type="video/webm" />
-            <source src="assets/video/videoplayback.mp4" type="video/mp4" />
-            <source src="assets/video/videoplayback.ogv" type="video/ogg" />
-            <p>Your browser doesn't support HTML5 video.</p>
-          </video>
-          <div class="controls" id="video-controls"><button class="controls__pp" type="button">&rtrif;</button>
-            <div class="controls__range">
-              <div class="controls__lavel"></div><input class="controls__seekbar" type="range" value="0" />
-            </div><button class="controls__fullscreen" type="button"><i class="icon-fullpage"></i></button>
-          </div>
-        </div>
-      </div>
+      <div class="slider__battons"><button class="arrow-btn arrow-btn--prev arrow-btn--undefined "><span class="arrow-btn__icon"></span></button><button class="arrow-btn arrow-btn--next arrow-btn--undefined "><span class="arrow-btn__icon"></span></button></div>
     </div>
   </div>
   <script type="text/javascript" src="assets/js/app.js"></script>

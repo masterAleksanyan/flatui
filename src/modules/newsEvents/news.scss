@@ -1,5 +1,7 @@
 .news-events{
   display: flex;
+  width: 288px;
+  height: 212px;
   border-radius: .3em;
   &__img{
     flex-basis: 33%;
@@ -23,7 +25,7 @@
 
 // news
 .news-content{
-  background-color: #e75735;
+  background-color: $color1;
   &__title{
     font-size: 2em;
     font-weight: 300;
@@ -48,7 +50,7 @@
 
 // events
 .events-content{
-  background-color: #4eb7a8;
+  background-color: $color2;
   &__date{
     margin-bottom: .5em;
     font-size: 2.14em;
@@ -70,12 +72,12 @@
     margin-top: 1em;
     padding: .5em 1em;
     background-color: #fff;
-    color: #4eb7a8;
+    color: $color2;
     font-size: .71em;
     text-transform: uppercase;
     font-weight: 900;
     border-radius: .3em;
-    box-shadow: 0 3px 0 0 #379285;
+    box-shadow: 0 3px 0 0 $color2dark;
     @include transition;
     &:hover{
       box-shadow: none;

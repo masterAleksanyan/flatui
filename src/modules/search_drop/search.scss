@@ -1,12 +1,13 @@
 .searching{
   display: flex;
   height: 2em;
-  margin-bottom: 1.1em;
+  width: 288px;
   &__input{
-    flex-grow: 1;
+    width: calc(100% - 33px);
     padding-left: .95em;
     background-color: #e5e5e5;
     color: #888;
+    font-family: 'Source Sans Pro', sans-serif;
     border: none;
     border-top-left-radius: .3em;
     border-bottom-left-radius: .3em;
@@ -15,21 +16,29 @@
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 14px;
     }
+    &--not{
+      background-color: $color1;
+      @include placeholder{
+        color: #fff;
+      }
+      & + .searching__btn{
+        background-color: $color1;
+      }
+    }
   }
   &__btn{
     border: none;
     width: 33px;
     border-bottom-right-radius: .3em;
     border-top-right-radius: .3em;
-    background-color: #e75735;
     color: #fff;
     cursor: pointer;
     line-height: 1;
-  }
-  &__not{
-    background-color: #e75735;
-    @include placeholder{
-      color: #fff;
+    &--red{
+      background-color: $color1;
+    }
+    &--green{
+      background-color: $color2;
     }
   }
 }
@@ -38,9 +47,8 @@
 //  drop
 .drop{
   position: relative;
-  width: 100%;
+  width: 288px;
   height: 2em;
-  margin-bottom: 1.1em;
   &__label{
     position: relative;
     display: block;
@@ -55,9 +63,14 @@
     width: 33px;
     height: 100%;
     padding-top: .4em;
-    background-color: #4eb7a8;
     border-bottom-right-radius: .3em;
     border-top-right-radius: .3em;
+    &--red{
+      background-color: $color1;
+    }
+    &--green{
+      background-color: $color2;
+    }
     &::after{
       content: '';
       display: block;
@@ -70,7 +83,6 @@
     }
   }
   &-list{
-    background-color: #4eb7a8;
     position: absolute;
     left: 0;
     top: 0;
@@ -82,6 +94,12 @@
     overflow: hidden;
     font-size: 1em;
     color: #fff;
+    &--green{
+      background-color: $color2;
+    }
+    &--red{
+      background-color: $color1;
+    }
     :checked + label{
       order: -1;
       border-top: 0;

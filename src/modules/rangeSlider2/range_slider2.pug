@@ -1,5 +1,5 @@
-mixin range_slider2(options)
-  .range-slide2
+mixin range_slider2(options, myClass)
+  .range-slide2(class=(myClass ? myClass : false))
     .range-slide2__row
     div(class="range-slide2__level range-slide2__level--"+options.color data-level=""+options.lavel)
       span.range-slide2__btn
@@ -9,3 +9,6 @@ mixin range_slider2(options)
       span 50
       span 75
       span 100
+
+
+//- +range_slider2({lavel: 75,color: 'green/red'})

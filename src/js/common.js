@@ -11,6 +11,7 @@ import "../modules/formElements/form.js"
 import "../modules/map/map.js"
 import "../modules/calendar/calendar.js"
 import "../modules/video/video.js"
+import "../modules/menubtn/menubtn.js"
 
 // // javascript
 //window.onload = function(){

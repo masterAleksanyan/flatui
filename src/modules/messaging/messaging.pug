@@ -1,6 +1,6 @@
-mixin messaging(options)
-  .messaging
-    .messaging__header
+mixin messaging(options, myClass)
+  .messaging(class=(myClass ? myClass : false))
+    .messaging__header(class="messaging__header--"+options.bgColor)
       h3.messaging__adminname= options.name
     .messaging__content
       .msg-admin
@@ -17,4 +17,13 @@ mixin messaging(options)
           p= options.welcomeText
       .msg-guest
         textarea(class="msg-guest__message" placeholder="Messages")
-        +button({size: 'big',color: 'green',text: 'Reply',myClass: 'form_btn'})
+        +button({size: 'big',text: 'Reply'}, 'msg-guest__btn--'+options.bgColor)
+
+
+//- +messaging({photoname: 'user2.png', 
+//-             alt: 'user2', 
+//-             name: 'Sarah Brown',
+//-             welcomeText: 'Hey! So are we cool to meet at the art gallery? Say 8pm',
+//-             bgColor: 'green',
+//-             chatHref: '',
+//-             photoHref: ''})

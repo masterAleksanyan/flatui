@@ -1,7 +1,8 @@
 .map-block{
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 272px;
+  min-height: 300px;
 }
 
 .map-footer{
@@ -10,13 +11,18 @@
   left: 0;
   width: 100%;
   min-height: 70px;
-  background-color: #e75735;
   color: #fff;
   z-index: 9;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
+  &--red{
+    background-color: $color1;
+  }
+  &--green{
+    background-color: $color2;
+  }
 }
 
 .map-addres{

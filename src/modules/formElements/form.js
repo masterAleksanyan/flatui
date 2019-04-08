@@ -1,7 +1,7 @@
 let nameReg = /^[a-zA-Zа-яёА-ЯЁ ]+(([',. -][a-zA-Zа-яёА-ЯЁ ])?[a-zA-Zа-яёА-ЯЁ]*)*$/g;
 let mailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let inputs = document.querySelectorAll('input.inp__item');
-let forms = document.querySelectorAll('form.form_elements');
+let forms = document.querySelectorAll('form.form-elements');
 
 if(inputs.length){
   for(let i=0; i<inputs.length; i++){

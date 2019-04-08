@@ -1,34 +1,41 @@
-mixin input(options)
-  p.inp
-    input(class="inp__item "+(options.thisClass ? options.thisClass : "") 
+mixin input(options, myClass)
+  p.inp(class=(myClass ? myClass : false))
+    input(class="inp__item"
       type=(options.type?options.type:"text") 
       name=(options.name?options.name:"")
       placeholder=(options.placeholder?options.placeholder:""))
     span.inp__msg.inp__msg--err Error
     span.inp__msg.inp__msg--ok  Thanks!
+    
+//- +input({type: 'text', name: 'Name', placeholder: 'Your Name'}, 'myclass')
 
-mixin textarea(options)
-  p.inp
-    textarea(class="inp__item "+(options.thisClass ? options.thisClass : "")
+mixin textarea(options, myClass)
+  p.inp(class=(myClass ? myClass : false))
+    textarea(class="inp__item inp__area"
       name=(options.name ? options.name : false)
       placeholder=(options.placeholder ? options.placeholder : ""))
+      
+//- +textarea({placeholder: 'Your Message', name: 'name'}, 'myclass')
 
-mixin radioOffON(options)
-    label.offon
+mixin radioOffON(options, myClass)
+    label.offon(class=(myClass ? myClass : false))
       input(class="offon__input" type="radio"
         name=(options.name ? options.name : false)
         checked=(options.checked ? "checked" : false)
         disabled=(options.disabled ? "disabled" : false))
       p.offon-btn
         span(class="offon-btn__item offon-btn__item--off") Off
-        span(class="offon-btn__item offon-btn__item--on") On
-      | #{text}
+        span(class="offon-btn__item offon-btn__item--on offon-btn__item--"+options.bgcolor) On
 
-mixin boxes(options)
-  label.check
+//- +radioOffON({name: 'r', bgcolor: 'red/green', checked: 'checked', disabled: ''})
+
+mixin boxes(options, myClass)
+  label.check(class=(myClass ? myClass : false))
     input(class="check__input" type="checkbox" 
       name=(options.name ? options.name : false) 
       checked=(options.checked ? "checked" : false) 
       disabled=(options.disabled ? "disabled" : false))
-    span.check__box
-    | #{options.text}
+    span.check__box(class=" check__box--"+options.bgcolor)
+
+
+//- +boxes({name: 'box1', bgcolor: 'red/green', checked: 'checked', disabled: ''})

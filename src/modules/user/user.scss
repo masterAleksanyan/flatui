@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 270px;
   min-height: 94px;
   &__img{
     width: 94px;
@@ -38,24 +38,37 @@
       transform: translateY(-50%) rotate(45deg);
       @include transition;
     }
-    &:hover{
-      background-color: #4eb7a8;
+    &--red:hover{
+      background-color: $color2;
       @include transition;
       &::before{
-        background-color: #4eb7a8;
-        @include transition;
-      }
-      & *{
-        color: #fff;
+        background-color: $color2;
         @include transition;
       }
     }
+    &--green:hover{
+      background-color: $color1;
+      @include transition;
+      &::before{
+        background-color: $color1;
+        @include transition;
+      }
+    }
+    &:hover *{
+      color: #fff;
+      @include transition;
+    }
     &__name{
       font-size: 1.28em;
-      color: #e75735;
       font-weight: 500;
       margin-bottom: 8px;
       line-height: 1;
+      &--red{
+        color: $color1;
+      }
+      &--green{
+        color: $color2;
+      }
     }
     &__vocation{
       font-size: .78em;
@@ -71,8 +84,11 @@
     color: #757575;
     &__item{
       margin: 0 8px;
-      &--tw{
-        color: #e75735;
+      &--red{
+        color: $color1;
+      }
+      &--green{
+        color: $color2;
       }
     }
   }

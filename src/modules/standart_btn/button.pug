@@ -1,4 +1,7 @@
-mixin button(options)
+mixin button(options, myClass)
   - var bs = "st-btn--"+options.size
   - var rg = "st-btn--"+options.color
-    button(class="st-btn ripple-elem "+bs +" "+rg +" "+(options.myClass ? options.myClass : ""))= options.text
+    button(class="st-btn ripple-elem "+bs +" "+rg +" "+(myClass ? myClass : ''))= options.text
+
+
+//- +button({size: 'small/big',color: 'green/red',text: 'button'})

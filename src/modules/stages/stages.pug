@@ -1,5 +1,5 @@
-mixin stagesItem(options)
-  div(class="stages stages--"+(options.color?options.color:""))
+mixin stagesItem(options, myClass)
+  div(class="stages stages--"+options.color + " "+(myClass ? myClass : ''))
     .stages__full
       - for (var i = 1; i <= options.items; i++)
       if i <= options.level && options.level != 1
@@ -7,3 +7,9 @@ mixin stagesItem(options)
       else
         span.stages__item= i
     div(class="stages__level" style="width: "+(options.level-1)*(100/(options.items-1))+"%")
+
+
+//- +stagesItem({items: '5', //// Допустимо любое цифра
+//-             level: '2',  //// <= items
+//-             color: 'red/green'
+//-             })

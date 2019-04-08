@@ -1,9 +1,9 @@
-mixin map(options)
-  .map(class="map-block" data-cor=""+options.cor 
+mixin map(options, myClass)
+  .map(class="map-block "+(myClass ? myClass : false) data-cor=""+options.cor 
                           data-center=""+options.center
                           data-zoom=""+options.zoom
                           data-icon=""+options.geoicon)
-    .map-footer
+    .map-footer(class=" map-footer--"+options.bgcolor)
       .map-addres
         span.map-addres__inscription= options.inscriptionText
         a(class="map-addres__link" 
@@ -13,3 +13,17 @@ mixin map(options)
           i.icon-location
         a(class="map-geo__item map-geo__item--geo" href=""+(options.geoLink?options.geoLink:"#"))
           i.icon-geo
+
+
+//- +map({
+//-     cor: '47.60, 41.8',
+//-     center: '47.60, 41.8',
+//-     inscriptionText: 'Meet us!',
+//-     addresText: '1259  CALIFORNIA ST San Francisco, CA',
+//-     zoom: 9,
+//-     geoicon: 'geo_icon.svg',
+//-     addresLink: '',
+//-     locationLink: '',
+//-     geoLink: '',
+//-     bgcolor: 'red/green'
+//-   }, 'myclass')

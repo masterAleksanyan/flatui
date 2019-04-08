@@ -1,12 +1,19 @@
 .messaging{
   background-color: #f2f2f2;
   border-radius: .3em;
+  width: 288px;
   &__header{
     padding: 25px 10px 32px;
-    background-color: #4eb7a8;
-    border-bottom: 34px solid #46ab9d;
     border-top-left-radius: .3em;
     border-top-right-radius: .3em;
+    &--green{
+      background-color: $color2;
+      border-bottom: 34px solid $color2dark;
+    }
+    &--red{
+      background-color: $color1;
+      border-bottom: 34px solid $color1dark;
+    }
   }
   &__adminname{
     font-size: 2.42em;
@@ -72,8 +79,37 @@
 }
 
 .msg-guest{
-  .form_btn{
+  &__btn--green{
     width: 100%;
+    display: block;
+    margin-left: auto;
+    background-color: $color2;
+    color: #fff;
+    border: 1px solid $color2;
+    box-shadow: 0 3px $color2dark;
+    @include mySize{
+      margin: 20px auto;
+    }
+    &:hover{
+      color: $color2;
+      background-color: #fff;
+    }
+  }
+  &__btn--red{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    background-color: $color1;
+    border: 1px solid $color1;
+    box-shadow: 0 3px $color1dark;
+    color: #fff;
+    @include mySize{
+      margin: 20px auto;
+    }
+    &:hover{
+      color: $color1;
+      background-color: #fff;
+    }
   }
   &__message{
     width: 100%;

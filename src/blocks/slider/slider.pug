@@ -1,0 +1,38 @@
+.slider
+  .slider__block
+    .slider__item.active
+      .slider__news
+        +news({photoname: 'velik.png', 
+              type: 'news',
+              title: 'It’s all going downhill',
+              date: '24  AUGUST  2013',
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'})
+      
+    .slider__item
+      .slider__news
+        +news({photoname: 'house.png', 
+              type: 'events',
+              day: '24',
+              month: 'Aug',
+              title: 'THIS IS THE TITLE',
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              linktext: 'ADD  TO  CALENDAR'})
+    .slider__item
+      .slider__news
+        +news({photoname: 'velik.png', 
+              type: 'news',
+              title: 'It’s all going downhill',
+              date: '24  AUGUST  2013',
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'})
+    .slider__item
+      .slider__news
+        +news({photoname: 'house.png', 
+              type: 'events',
+              day: '24',
+              month: 'Aug',
+              title: 'THIS IS THE TITLE',
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+              linktext: 'ADD  TO  CALENDAR'})
+  .slider__battons
+    +arrow({side: 'prev'})
+    +arrow({side: 'next'})

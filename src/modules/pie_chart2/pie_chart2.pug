@@ -1,26 +1,23 @@
-mixin pie(options)
-  - let names=[], values=[], colors=[], v=0
-  - for (let i=0; i<options.length; i++)
-    - names.push(options[i].name)
-    - values.push(options[i].value)
-    - colors.push(options[i].color)
-  figure.figure
+mixin pie(options, myClass)
+  - let v=0
+  figure.figure(class=(myClass ? myClass : false))
     .figure__content
-      svg(width="1em" height="1em" viewBox="0 0 38 38" class="donut" aria-labelledby="beers-title beers-desc" role="img")
-        circle(class="donut-hole" cx="19" cy="19" r="15.91549430918954" fill="#fff" role="presentation")
-        circle(class="donut-ring" cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="6" role="presentation")
-        - for (let j=0; j<values.length; j++)
-          - v += +values[j]
-          circle(class="donut-segment" cx="19" cy="19" r="15.91549430918954" fill="transparent" 
-                  stroke=""+colors[j] 
+      svg(width="100%" height="100%" viewBox="0 0 38 38" class="figure__donut")
+        circle(cx="19" cy="19" r="15.91549430918954" fill="#fff")
+        circle(cx="19" cy="19" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="6")
+        - for (let i=0; i<options.value.length; i++)
+          - v += options.value[i]
+          circle(class="figure__segment" cx="19" cy="19" r="15.91549430918954" 
+                  fill="transparent"
+                  stroke=""+options.color[i] 
                   stroke-width="6" 
-                  stroke-dasharray=""+values[j] +" "+(100-(+values[j])) 
-                  stroke-dashoffset=(j==0 ? 25 : 100 - (v - values[j]) + 25)
-                  aria-labelledby="donut-segment-1-title donut-segment-1-desc")
-    figcaption.figcaption
-      p.sr-only Donut chart showing 10 total beers. Two beers are Imperial India Pale Ales, four beers are Belgian Quadrupels, and three are Russian Imperial Stouts. The last remaining beer is unlabeled.
-      ul(class="figcaption__list" aria-hidden="true" role="presentation")
-        - for (let j=0; j<names.length; j++)
-          li.figcaption__name
-            span(class="figcaption__circle" style="background-color: "+colors[j])
-            = names[j]
+                  stroke-dasharray=""+options.value[i] +" "+(100-options.value[i]) 
+                  stroke-dashoffset=(i==0 ? 25 : 100 - (v - options.value[i]) + 25))
+          g.figure__text-block(fill=""+options.color[i])
+            text(class="figure__text" x="50%" y="-5%")= options.name[i]
+
+
+
+//- +pie({name: ['JavaScript','JQuery','Html','Css'],
+//-       value: [15,20,40,25], //// +all <= 100
+//-       color: ['#e75735','#747474','#e5e5e5','#4eb7a8']})

@@ -1,6 +1,6 @@
 .range-slide2{
   position: relative;
-  width: 100%;
+  width: 260px;
   &__nums{
     display: flex;
     justify-content: space-between;
@@ -36,15 +36,15 @@
     -ms-user-select: none;
     user-select: none;
     &--red{
-      background-color: #e75735;
+      background-color: $color1;
       .range-slide2__btn{
-        background-color: #e75735;
+        background-color: $color1;
       }
     }
     &--green{
-      background-color: #4eb7a8;
+      background-color: $color2;
       .range-slide2__btn{
-        background-color: #4eb7a8;
+        background-color: $color2;
       }
     }
   }

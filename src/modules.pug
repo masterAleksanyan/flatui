@@ -1,0 +1,160 @@
+include modules/standart_btn/button.pug
+include modules/arrows_btn/arrow.pug
+include modules/pie_chart/pie_chart.pug
+include modules/pie_chart2/pie_chart2.pug
+include modules/rangeSlider/range_slider.pug
+include modules/rangeSlider2/range_slider2.pug
+include modules/stages/stages.pug
+include modules/formElements/form.pug
+include modules/search_drop/search.pug
+include modules/user/user.pug
+include modules/newsEvents/news.pug
+include modules/map/map.pug
+include modules/calendar/calendar.pug
+include modules/messaging/messaging.pug
+include modules/video/video.pug
+
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title FlatUi Components
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript")
+  body
+    .component-wrapper
+      div
+        h2.title2 Standart buttons
+        .st-buttons
+          div
+            +button({size: 'small',color: 'green',text: 'button'})
+            +button({size: 'big',color: 'green',text: 'button'})
+          div
+            +button({size: 'big',color: 'red',text: 'button'})
+            +button({size: 'small',color: 'red',text: 'button'})
+      div
+        h2.title2 Arrow buttons
+        .arrow-buttons
+          div
+            +arrow({side: 'prev', bgcolor: 'green'})
+            +arrow({side: 'next', bgcolor: 'green'})
+          div
+            +arrow({side: 'prev', bgcolor: 'green', disabled: 'disabled'})
+            +arrow({side: 'next', bgcolor: 'green', disabled: 'disabled'})
+          div
+            +arrow({side: 'prev', bgcolor: 'red'})
+            +arrow({side: 'next', bgcolor: 'red'})
+      div
+        h2.title2 PERCENTAGES / PIE CHART
+        .pie-chart-container
+          +pie_chart({pracent: 0, boolean: true, color: 'red'})
+          +pie_chart({pracent: 38, boolean: true, color: 'red'})
+          +pie_chart({pracent: 62, boolean: true, color: 'green'})
+          +pie_chart({pracent: 89, boolean: true, color: 'red'})
+          +pie({name: ['JavaScript','JQuery','Html','Css'],
+                value: [15,20,40,25],
+                color: ['#e75735','#747474','#e5e5e5','#4eb7a8']})
+      div
+        h2.title2 Sliders
+        .slider-block
+          +range_slider({lavel: 36,color: 'red'})
+          +range_slider2({lavel: 75,color: 'green'})
+      div
+        h2.title2 Stages
+        .stages-block
+          +stagesItem({items: '5', level: '2', color: 'red'})
+      div
+        h2.title2 FORM ELEMENTS
+        form.form-elements
+          div
+            +input({type: 'text', name: 'Name', placeholder: 'Your Name'})
+            +input({type: 'email', name: 'email', placeholder: 'Your email'})
+            +textarea({placeholder: 'Your Message'})
+          div.form-buttons
+            div
+              h3.title2.title3 TOGGLES
+              .toggles
+                +radioOffON({name: 'r',checked: 'checked',bgcolor: 'green'})
+                +radioOffON({name: 'r', bgcolor: 'green'})
+            div
+              h3.title2.title3 TICK BOXES
+              .boxes
+                +boxes({name: 'box1', bgcolor: 'green', checked: 'checked'})
+                +boxes({name: 'box2', bgcolor: 'green'})
+          p
+            +button({size: 'big',color: 'green',text: 'submit'}, 'form-elements__btn')
+      .searchdrop_userprofile
+        div
+          h2.title3 SEARCH / DROP DOWN
+          form.search-dropdown
+            +search({placeholder: 'Search', color: 'red'}, 'c-search-drop')
+            +search({placeholder: 'I’ve not found what I’m looking for...', error: 'not'}, 'c-search-drop')
+            +dropDown({id: 'drop1',color: 'green', array: ['Choose An Option', 'Choose An', 'Choose', 'Lorem ipsum']})
+        .user-profile
+          h2.title3 USER  PROFILE
+          .users
+            +user({name: 'John Smith', vocation: 'UX  DESIGNER', photoname: 'user1.png', color: 'red'}, 'c-user-profile')
+            +user({name: 'Sarah Brown', vocation: 'DEVELOPER', photoname: 'user2.png', color: 'green'})
+      div
+        h2.title2 NEWS &amp; EVENTS
+        .newsevents
+          +news({photoname: 'velik.png', 
+                type: 'news',
+                title: 'It’s all going downhill',
+                date: '24  AUGUST  2013',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.'}, 'c-newsevents')
+          +news({photoname: 'house.png', 
+                type: 'events',
+                day: '24',
+                month: 'Aug',
+                title: 'THIS IS THE TITLE',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                linktext: 'ADD  TO  CALENDAR'})
+      div
+        h2.title2 Location
+        .location
+          +map({
+            cor: '47.60, 41.8',
+            center: '47.60, 41.8',
+            inscriptionText: 'Meet us!',
+            addresText: '1259  CALIFORNIA ST San Francisco, CA',
+            zoom: 9,
+            geoicon: 'geo_icon.svg',
+            bgcolor: 'red'
+          })
+      .calendar-messaging
+        div
+          h2.title2 Calendar
+          +calendar({btntext: 'Today', bgColor: 'red'}, 'c-calendar')
+        div
+          h2.title2 Messaging
+          +messaging({photoname: 'user2.png', 
+                      alt: 'user2', 
+                      name: 'Sarah Brown',
+                      welcomeText: 'Hey! So are we cool to meet at the art gallery? Say 8pm',
+                      bgColor: 'green'})
+      div
+        h2.title2 Video
+        .video-container
+          +video({photoname: 'video.png',
+                  fullpagecolor: 'red',
+                  videoname: ['videoplayback.webm','videoplayback.mp4','videoplayback.ogv'],
+                  videotype: ['video/webm', 'video/mp4', 'video/ogv']})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
